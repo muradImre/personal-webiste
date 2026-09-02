@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #bdbebf;
+  --paper-2: #c9cacc;
+  --ink: #1c1d20;
+  --ink-soft: #2a2b2e;
+  --muted: #505153;
+  --rule: #a8a9ab;
+  --accent: #1c1d20;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-body);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  background: var(--paper);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01" on, "cv11" on;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.display {
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.84;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.9rem 1.6rem;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+@media print {
+  :root {
+    --paper: #ffffff;
+    --ink: #111111;
+    --ink-soft: #222222;
+    --muted: #444444;
+    --rule: #cccccc;
+  }
+
+  body {
+    background: white;
+  }
+
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+}
