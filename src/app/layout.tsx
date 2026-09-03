@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Inter_Tight } from "next/font/google";
+import { Analytics } from "@/components/Analytics";
 import { AppMain } from "@/components/AppMain";
 import { PageCurtain } from "@/components/PageCurtain";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader />
         <AppMain>{children}</AppMain>
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   );

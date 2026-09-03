@@ -185,23 +185,8 @@ button:focus-visible {
   transition: none;
 }
 
-.page-enter {
-  animation: page-enter 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-html[data-curtain] .page-enter {
-  animation: none;
-  opacity: 1;
-}
-
-@keyframes page-enter {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+/* Soft route fade removed — the page curtain owns transitions.
+   Re-enabling opacity enter after curtain idle caused a post-reveal blink. */
 
 @keyframes about-orbit {
   to {
@@ -266,7 +251,6 @@ html[data-curtain] .page-enter {
     transform: none !important;
   }
 
-  .page-enter,
   .page-curtain-cover,
   .page-curtain-reveal {
     animation: none;

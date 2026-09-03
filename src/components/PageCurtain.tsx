@@ -85,6 +85,10 @@ export function PageCurtain() {
       setPaintedPath(null);
       setNavStarted(false);
       setLabel(introLabel(href) || (anchor.textContent ?? "").trim().split("\n")[0]);
+      // Reset scroll-tint so the paper tone doesn’t flash dark→light under the reveal.
+      document.documentElement.style.setProperty("--end", "0");
+      document.documentElement.style.setProperty("--end-bar", "0");
+      document.documentElement.style.setProperty("--hero", "0");
       setPhase("cover");
 
       window.clearTimeout(pushTimer.current);
