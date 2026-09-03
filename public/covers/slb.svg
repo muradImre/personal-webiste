@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <style>
+    text {
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      fill: #bdbebf;
+    }
+  </style>
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <line x1="220" y1="248" x2="1380" y2="248" stroke="#bdbebf" stroke-opacity="0.18" stroke-width="1.4" stroke-dasharray="8 10"/>
+    <line x1="220" y1="448" x2="1380" y2="448" stroke="#bdbebf" stroke-opacity="0.18" stroke-width="1.4" stroke-dasharray="8 10"/>
+    <line x1="220" y1="648" x2="1380" y2="648" stroke="#bdbebf" stroke-opacity="0.18" stroke-width="1.4" stroke-dasharray="8 10"/>
+
+    <rect x="390" y="96" width="280" height="100" rx="18" stroke="#bdbebf" stroke-opacity="0.94" stroke-width="3.2"/>
+    <text x="530" y="156" text-anchor="middle" font-size="22" font-weight="500" fill-opacity="0.88">Web Editor</text>
+    <rect x="930" y="96" width="280" height="100" rx="18" stroke="#bdbebf" stroke-opacity="0.94" stroke-width="3.2"/>
+    <text x="1070" y="156" text-anchor="middle" font-size="22" font-weight="500" fill-opacity="0.88">Users</text>
+
+    <line x1="530" y1="196" x2="530" y2="268" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <path d="M 530 268 L 518 250 M 530 268 L 542 250" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <line x1="1070" y1="196" x2="1070" y2="268" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <path d="M 1070 268 L 1058 250 M 1070 268 L 1082 250" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+
+    <rect x="390" y="280" width="820" height="100" rx="18" stroke="#bdbebf" stroke-opacity="0.94" stroke-width="3.2"/>
+    <text x="800" y="340" text-anchor="middle" font-size="22" font-weight="500" fill-opacity="0.88">Load Balancer / API Gateway</text>
+
+    <line x1="800" y1="380" x2="800" y2="428" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <line x1="530" y1="428" x2="1070" y2="428" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <line x1="530" y1="428" x2="530" y2="468" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <path d="M 530 468 L 518 450 M 530 468 L 542 450" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <line x1="1070" y1="428" x2="1070" y2="468" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <path d="M 1070 468 L 1058 450 M 1070 468 L 1082 450" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+
+    <rect x="390" y="480" width="280" height="100" rx="18" stroke="#bdbebf" stroke-opacity="0.94" stroke-width="3.2"/>
+    <text x="530" y="540" text-anchor="middle" font-size="22" font-weight="500" fill-opacity="0.88">Editor Backend</text>
+    <rect x="930" y="480" width="280" height="100" rx="18" stroke="#bdbebf" stroke-opacity="0.94" stroke-width="3.2"/>
+    <text x="1070" y="540" text-anchor="middle" font-size="22" font-weight="500" fill-opacity="0.88">Realtime Engine</text>
+
+    <line x1="530" y1="580" x2="530" y2="628" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <line x1="390" y1="628" x2="670" y2="628" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <line x1="390" y1="628" x2="390" y2="668" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <path d="M 390 668 L 378 650 M 390 668 L 402 650" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <line x1="670" y1="628" x2="670" y2="668" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <path d="M 670 668 L 658 650 M 670 668 L 682 650" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <line x1="1070" y1="580" x2="1070" y2="668" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+    <path d="M 1070 668 L 1058 650 M 1070 668 L 1082 650" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="3"/>
+
+    <rect x="250" y="680" width="280" height="100" rx="18" stroke="#bdbebf" stroke-opacity="0.94" stroke-width="3.2"/>
+    <text x="390" y="740" text-anchor="middle" font-size="22" font-weight="500" fill-opacity="0.88">Cosmos DB</text>
+    <rect x="530" y="680" width="280" height="100" rx="18" stroke="#bdbebf" stroke-opacity="0.94" stroke-width="3.2"/>
+    <text x="670" y="740" text-anchor="middle" font-size="22" font-weight="500" fill-opacity="0.88">Redis</text>
+    <rect x="930" y="680" width="280" height="100" rx="18" stroke="#bdbebf" stroke-opacity="0.94" stroke-width="3.2"/>
+    <text x="1070" y="740" text-anchor="middle" font-size="22" font-weight="500" fill-opacity="0.88">SignalR</text>
+
+    <line x1="810" y1="730" x2="930" y2="730" stroke="#bdbebf" stroke-opacity="0.72" stroke-width="2.4"/>
+    <path d="M 810 730 L 828 718 M 810 730 L 828 742" stroke="#bdbebf" stroke-opacity="0.72" stroke-width="2.4"/>
+    <path d="M 930 730 L 912 718 M 930 730 L 912 742" stroke="#bdbebf" stroke-opacity="0.72" stroke-width="2.4"/>
+  </g>
+</svg>

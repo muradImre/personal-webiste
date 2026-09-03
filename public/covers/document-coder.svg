@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <style>
+    text {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      fill: #bdbebf;
+    }
+  </style>
+  <g transform="translate(384.00 171.06) scale(1.20038)">
+    <g transform="matrix(0.882948 0.469472 0 1 181.004 -96.242)">
+      <g stroke="#bdbebf" stroke-opacity="0.3" fill="none" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="0" y="0" width="580" height="372" rx="2.5" stroke-width="1.15"/>
+        <path d="M0 32 H580" stroke-width="1.15"/>
+        <circle cx="16" cy="16.0" r="4.6" stroke-width="1"/>
+        <circle cx="34" cy="16.0" r="4.6" stroke-width="1"/>
+        <circle cx="52" cy="16.0" r="4.6" stroke-width="1"/>
+        <path d="M70 32 V6 H182 V32" stroke-width="1.035"/>
+        <path d="M50 32 V372" stroke-width="0.8049999999999999" stroke-opacity="0.195"/>
+      </g>
+      <text x="126.0" y="22.4" text-anchor="middle" font-size="12" fill-opacity="0.3">factorial.s</text>
+      <text x="25.0" y="51.0" text-anchor="middle" font-size="10" fill-opacity="0.186">0000</text>
+      <text x="60" y="51.0" font-size="12" fill-opacity="0.3">.text</text>
+      <text x="25.0" y="67.8" text-anchor="middle" font-size="10" fill-opacity="0.186">0001</text>
+      <text x="60" y="67.8" font-size="12" fill-opacity="0.3">.globl factorial</text>
+      <text x="25.0" y="84.6" text-anchor="middle" font-size="10" fill-opacity="0.186">0002</text>
+      <text x="60" y="84.6" font-size="12" fill-opacity="0.3">factorial:</text>
+      <text x="25.0" y="101.4" text-anchor="middle" font-size="10" fill-opacity="0.186">0003</text>
+      <text x="60" y="101.4" font-size="12" fill-opacity="0.3">    push   rbp</text>
+      <text x="25.0" y="118.2" text-anchor="middle" font-size="10" fill-opacity="0.186">0004</text>
+      <text x="60" y="118.2" font-size="12" fill-opacity="0.3">    mov    rbp, rsp</text>
+      <text x="25.0" y="135.0" text-anchor="middle" font-size="10" fill-opacity="0.186">0005</text>
+      <text x="60" y="135.0" font-size="12" fill-opacity="0.3">    push   rdi</text>
+      <text x="25.0" y="151.8" text-anchor="middle" font-size="10" fill-opacity="0.186">0006</text>
+      <text x="60" y="151.8" font-size="12" fill-opacity="0.3">    cmp    edi, 0</text>
+      <text x="25.0" y="168.60000000000002" text-anchor="middle" font-size="10" fill-opacity="0.186">0007</text>
+      <text x="60" y="168.60000000000002" font-size="12" fill-opacity="0.3">    jne    .L1</text>
+      <text x="25.0" y="185.4" text-anchor="middle" font-size="10" fill-opacity="0.186">0008</text>
+      <text x="60" y="185.4" font-size="12" fill-opacity="0.3">    mov    eax, 1</text>
+      <text x="25.0" y="202.20000000000002" text-anchor="middle" font-size="10" fill-opacity="0.186">0009</text>
+      <text x="60" y="202.20000000000002" font-size="12" fill-opacity="0.3">    pop    rdi</text>
+      <text x="25.0" y="219.0" text-anchor="middle" font-size="10" fill-opacity="0.186">000A</text>
+      <text x="60" y="219.0" font-size="12" fill-opacity="0.3">    pop    rbp</text>
+      <text x="25.0" y="235.8" text-anchor="middle" font-size="10" fill-opacity="0.186">000B</text>
+      <text x="60" y="235.8" font-size="12" fill-opacity="0.3">    ret</text>
+      <text x="25.0" y="252.60000000000002" text-anchor="middle" font-size="10" fill-opacity="0.186">000C</text>
+      <text x="60" y="252.60000000000002" font-size="12" fill-opacity="0.3">.L1:</text>
+      <text x="25.0" y="269.4" text-anchor="middle" font-size="10" fill-opacity="0.186">000D</text>
+      <text x="60" y="269.4" font-size="12" fill-opacity="0.3">    sub    edi, 1</text>
+      <text x="25.0" y="286.20000000000005" text-anchor="middle" font-size="10" fill-opacity="0.186">000E</text>
+      <text x="60" y="286.20000000000005" font-size="12" fill-opacity="0.3">    call   factorial</text>
+      <text x="25.0" y="303.0" text-anchor="middle" font-size="10" fill-opacity="0.186">000F</text>
+      <text x="60" y="303.0" font-size="12" fill-opacity="0.3">    pop    rdi</text>
+      <text x="25.0" y="319.8" text-anchor="middle" font-size="10" fill-opacity="0.186">0010</text>
+      <text x="60" y="319.8" font-size="12" fill-opacity="0.3">    imul   eax, edi</text>
+      <text x="25.0" y="336.6" text-anchor="middle" font-size="10" fill-opacity="0.186">0011</text>
+      <text x="60" y="336.6" font-size="12" fill-opacity="0.3">    pop    rbp</text>
+      <text x="25.0" y="353.40000000000003" text-anchor="middle" font-size="10" fill-opacity="0.186">0012</text>
+      <text x="60" y="353.40000000000003" font-size="12" fill-opacity="0.3">    ret</text>
+    </g>
+    <g transform="matrix(0.882948 0.469472 0 1 90.061 -47.886)">
+      <g stroke="#bdbebf" stroke-opacity="0.54" fill="none" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="0" y="0" width="580" height="372" rx="2.5" stroke-width="1.35"/>
+        <path d="M0 32 H580" stroke-width="1.35"/>
+        <circle cx="16" cy="16.0" r="4.6" stroke-width="1.1475"/>
+        <circle cx="34" cy="16.0" r="4.6" stroke-width="1.1475"/>
+        <circle cx="52" cy="16.0" r="4.6" stroke-width="1.1475"/>
+        <path d="M70 32 V6 H182 V32" stroke-width="1.215"/>
+        <path d="M50 32 V372" stroke-width="0.945" stroke-opacity="0.35100000000000003"/>
+      </g>
+      <text x="126.0" y="22.4" text-anchor="middle" font-size="12" fill-opacity="0.54">main.c</text>
+      <text x="25.0" y="51.0" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">1</text>
+      <text x="60" y="51.0" font-size="12" fill-opacity="0.54">#include &lt;stdio.h&gt;</text>
+      <text x="25.0" y="67.8" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">2</text>
+      <text x="60" y="67.8" font-size="12" fill-opacity="0.54"></text>
+      <text x="25.0" y="84.6" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">3</text>
+      <text x="60" y="84.6" font-size="12" fill-opacity="0.54">int factorial(int n) {</text>
+      <text x="25.0" y="101.4" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">4</text>
+      <text x="60" y="101.4" font-size="12" fill-opacity="0.54">    if (n == 0)</text>
+      <text x="25.0" y="118.2" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">5</text>
+      <text x="60" y="118.2" font-size="12" fill-opacity="0.54">        return 1;</text>
+      <text x="25.0" y="135.0" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">6</text>
+      <text x="60" y="135.0" font-size="12" fill-opacity="0.54">    else</text>
+      <text x="25.0" y="151.8" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">7</text>
+      <text x="60" y="151.8" font-size="12" fill-opacity="0.54">        return n * factorial(n - 1);</text>
+      <text x="25.0" y="168.60000000000002" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">8</text>
+      <text x="60" y="168.60000000000002" font-size="12" fill-opacity="0.54">}</text>
+      <text x="25.0" y="185.4" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">9</text>
+      <text x="60" y="185.4" font-size="12" fill-opacity="0.54"></text>
+      <text x="25.0" y="202.20000000000002" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">10</text>
+      <text x="60" y="202.20000000000002" font-size="12" fill-opacity="0.54">int main() {</text>
+      <text x="25.0" y="219.0" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">11</text>
+      <text x="60" y="219.0" font-size="12" fill-opacity="0.54">    int num = 5;</text>
+      <text x="25.0" y="235.8" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">12</text>
+      <text x="60" y="235.8" font-size="12" fill-opacity="0.54">    int result = factorial(num);</text>
+      <text x="25.0" y="252.60000000000002" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">13</text>
+      <text x="60" y="252.60000000000002" font-size="12" fill-opacity="0.54">    printf(&quot;Factorial is: %d\n&quot;, result);</text>
+      <text x="25.0" y="269.4" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">14</text>
+      <text x="60" y="269.4" font-size="12" fill-opacity="0.54">    return 0;</text>
+      <text x="25.0" y="286.20000000000005" text-anchor="middle" font-size="10" fill-opacity="0.33480000000000004">15</text>
+      <text x="60" y="286.20000000000005" font-size="12" fill-opacity="0.54">}</text>
+    </g>
+    <g transform="matrix(0.882948 0.469472 0 1 0.000 0.000)">
+      <g stroke="#bdbebf" stroke-opacity="0.88" fill="none" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="0" y="0" width="580" height="372" rx="2.5" stroke-width="1.65"/>
+        <path d="M0 32 H580" stroke-width="1.65"/>
+        <circle cx="16" cy="16.0" r="4.6" stroke-width="1.4024999999999999"/>
+        <circle cx="34" cy="16.0" r="4.6" stroke-width="1.4024999999999999"/>
+        <circle cx="52" cy="16.0" r="4.6" stroke-width="1.4024999999999999"/>
+        <path d="M70 32 V6 H182 V32" stroke-width="1.4849999999999999"/>
+        <path d="M50 32 V372" stroke-width="1.1549999999999998" stroke-opacity="0.5720000000000001"/>
+      </g>
+      <text x="126.0" y="22.4" text-anchor="middle" font-size="12" fill-opacity="0.88">main.py</text>
+      <text x="25.0" y="51.0" text-anchor="middle" font-size="10" fill-opacity="0.5456">1</text>
+      <text x="60" y="51.0" font-size="12" fill-opacity="0.88">def factorial(n):</text>
+      <text x="25.0" y="67.8" text-anchor="middle" font-size="10" fill-opacity="0.5456">2</text>
+      <text x="60" y="67.8" font-size="12" fill-opacity="0.88">    if n == 0:</text>
+      <text x="25.0" y="84.6" text-anchor="middle" font-size="10" fill-opacity="0.5456">3</text>
+      <text x="60" y="84.6" font-size="12" fill-opacity="0.88">        return 1</text>
+      <text x="25.0" y="101.4" text-anchor="middle" font-size="10" fill-opacity="0.5456">4</text>
+      <text x="60" y="101.4" font-size="12" fill-opacity="0.88">    else:</text>
+      <text x="25.0" y="118.2" text-anchor="middle" font-size="10" fill-opacity="0.5456">5</text>
+      <text x="60" y="118.2" font-size="12" fill-opacity="0.88">        return n * factorial(n - 1)</text>
+      <text x="25.0" y="135.0" text-anchor="middle" font-size="10" fill-opacity="0.5456">6</text>
+      <text x="60" y="135.0" font-size="12" fill-opacity="0.88"></text>
+      <text x="25.0" y="151.8" text-anchor="middle" font-size="10" fill-opacity="0.5456">7</text>
+      <text x="60" y="151.8" font-size="12" fill-opacity="0.88">def main():</text>
+      <text x="25.0" y="168.60000000000002" text-anchor="middle" font-size="10" fill-opacity="0.5456">8</text>
+      <text x="60" y="168.60000000000002" font-size="12" fill-opacity="0.88">    num = 5</text>
+      <text x="25.0" y="185.4" text-anchor="middle" font-size="10" fill-opacity="0.5456">9</text>
+      <text x="60" y="185.4" font-size="12" fill-opacity="0.88">    result = factorial(num)</text>
+      <text x="25.0" y="202.20000000000002" text-anchor="middle" font-size="10" fill-opacity="0.5456">10</text>
+      <text x="60" y="202.20000000000002" font-size="12" fill-opacity="0.88">    print(&quot;Factorial is:&quot;, result)</text>
+      <text x="25.0" y="219.0" text-anchor="middle" font-size="10" fill-opacity="0.5456">11</text>
+      <text x="60" y="219.0" font-size="12" fill-opacity="0.88"></text>
+      <text x="25.0" y="235.8" text-anchor="middle" font-size="10" fill-opacity="0.5456">12</text>
+      <text x="60" y="235.8" font-size="12" fill-opacity="0.88">if __name__ == &quot;__main__&quot;:</text>
+      <text x="25.0" y="252.60000000000002" text-anchor="middle" font-size="10" fill-opacity="0.5456">13</text>
+      <text x="60" y="252.60000000000002" font-size="12" fill-opacity="0.88">    main()</text>
+    </g>
+  </g>
+</svg>

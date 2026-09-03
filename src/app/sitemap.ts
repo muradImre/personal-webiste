@@ -13,9 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/projects",
     "/research",
     "/next",
-    "/oss",
     "/resume",
-    "/now",
     ...experiences.filter((item) => item.visibility === "listed").map((item) => `/experience/${item.slug}`),
     ...work.filter((item) => item.visibility === "listed").map((item) => `/projects/${item.slug}`),
     ...research.filter((item) => item.visibility === "listed").map((item) => `/research/${item.slug}`),
@@ -24,6 +22,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return listed.map((path) => ({
     url: `${site.url}${path}`,
-    lastModified: new Date(),
   }));
 }

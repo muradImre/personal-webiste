@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <line x1="500" y1="640" x2="1100" y2="640" stroke="#bdbebf" stroke-opacity="0.34" stroke-width="2.4" fill="none" stroke-dasharray="14 12"/>
+    <path d="M 766.0 606.0 L 834.0 674.0 M 834.0 606.0 L 766.0 674.0" stroke="#bdbebf" stroke-opacity="0.98" stroke-width="8.0" fill="none"/>
+    <line x1="500" y1="640" x2="620" y2="240" stroke="#bdbebf" stroke-opacity="0.94" stroke-width="4.2" fill="none"/>
+    <line x1="620" y1="240" x2="980" y2="240" stroke="#bdbebf" stroke-opacity="0.94" stroke-width="4.2" fill="none"/>
+    <line x1="980" y1="240" x2="1100" y2="640" stroke="#bdbebf" stroke-opacity="0.94" stroke-width="4.2" fill="none"/>
+    <rect x="772.0" y="220.0" width="56" height="40" rx="7" stroke="#bdbebf" stroke-opacity="0.94" stroke-width="3.0" fill="none"/>
+    <circle cx="500" cy="640" r="40" stroke="#bdbebf" stroke-opacity="0.92" stroke-width="3.4" fill="none"/>
+    <circle cx="620" cy="240" r="40" stroke="#bdbebf" stroke-opacity="0.92" stroke-width="3.4" fill="none"/>
+    <circle cx="980" cy="240" r="40" stroke="#bdbebf" stroke-opacity="0.92" stroke-width="3.4" fill="none"/>
+    <circle cx="1100" cy="640" r="40" stroke="#bdbebf" stroke-opacity="0.92" stroke-width="3.4" fill="none"/>
+  </g>
+</svg>

@@ -2,19 +2,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageIntro } from "@/components/PageIntro";
 import { getListedIdeas } from "@/content/ideas";
+import { pageMetadata } from "@/lib/pageMetadata";
 import { stageLabel } from "@/lib/format";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Next",
   description: "Document coder, a shippable Muqaddim, and a Reminisce public launch.",
-};
+  path: "/next",
+});
 
 export default function NextPage() {
   const items = getListedIdeas();
 
   return (
     <div>
-      <PageIntro title="Next—">
+      <PageIntro title="Next —">
         <p>What I actually plan to ship next. Not a backlog of maybes.</p>
       </PageIntro>
       <ul className="mt-10 px-5 pb-16 md:px-12">

@@ -2,22 +2,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageIntro } from "@/components/PageIntro";
 import { getListedResearch } from "@/content/research";
+import { pageMetadata } from "@/lib/pageMetadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Research",
-  description: "Work with Prof. Konstantinos Mamouras and Dr. Sinan Kockara at Rice CS.",
-};
+  description: "Rice CS research: JSON Schema infrastructure and biomedical NLP.",
+  path: "/research",
+});
 
 export default function ResearchPage() {
   const items = getListedResearch();
 
   return (
     <div>
-      <PageIntro title="Research—">
-        <p>
-          Two pieces at Rice CS: JSON schema infrastructure with Prof. Konstantinos Mamouras, and a biomedical NLP
-          fellowship with Dr. Sinan Kockara.
-        </p>
+      <PageIntro title="Research —">
+        <p>Two pieces at Rice CS.</p>
       </PageIntro>
       <ul className="mt-10 px-5 pb-16 md:px-12">
         {items.map((item) => (

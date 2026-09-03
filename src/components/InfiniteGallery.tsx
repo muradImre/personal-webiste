@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { getCover } from "@/content/covers";
+import { bindCenterLift } from "@/lib/centerLift";
 import { ProjectCover } from "./ProjectCover";
 
 type Item = {
@@ -22,8 +23,9 @@ export function InfiniteGallery({ items }: { items: Item[] }) {
   const jumping = useRef(false);
 
   useEffect(() => {
-    const el = scrollerRef.current;
-    if (!el || items.length === 0) return;
+    const found = scrollerRef.current;
+    if (!found || items.length === 0) return;
+    const el: HTMLDivElement = found;
 
     function copyWidth() {
       const first = el.querySelector<HTMLElement>("[data-copy]");
@@ -41,6 +43,7 @@ export function InfiniteGallery({ items }: { items: Item[] }) {
     }
 
     goToMiddle();
+    const stopLift = bindCenterLift(el);
 
     function onScroll() {
       if (jumping.current) return;
@@ -49,11 +52,15 @@ export function InfiniteGallery({ items }: { items: Item[] }) {
       if (el.scrollLeft < width) {
         jumping.current = true;
         el.scrollLeft += width;
-        jumping.current = false;
+        requestAnimationFrame(() => {
+          jumping.current = false;
+        });
       } else if (el.scrollLeft >= width * 2) {
         jumping.current = true;
         el.scrollLeft -= width;
-        jumping.current = false;
+        requestAnimationFrame(() => {
+          jumping.current = false;
+        });
       }
     }
 
@@ -61,14 +68,16 @@ export function InfiniteGallery({ items }: { items: Item[] }) {
     el.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", resize);
     return () => {
+      stopLift();
       el.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", resize);
     };
   }, [items]);
 
   useEffect(() => {
-    const el = scrollerRef.current;
-    if (!el) return;
+    const found = scrollerRef.current;
+    if (!found) return;
+    const el: HTMLDivElement = found;
 
     function onPointerDown(event: PointerEvent) {
       if (event.pointerType === "touch") return;
@@ -76,21 +85,27 @@ export function InfiniteGallery({ items }: { items: Item[] }) {
       didDrag.current = false;
       startX.current = event.clientX;
       startScroll.current = el.scrollLeft;
-      el.setPointerCapture(event.pointerId);
-      el.style.cursor = "grabbing";
     }
 
     function onPointerMove(event: PointerEvent) {
       if (!dragging.current) return;
       const delta = event.clientX - startX.current;
-      if (Math.abs(delta) > 6) didDrag.current = true;
-      el.scrollLeft = startScroll.current - delta;
+      if (Math.abs(delta) > 6) {
+        if (!didDrag.current) {
+          didDrag.current = true;
+          el.setPointerCapture(event.pointerId);
+          el.style.cursor = "grabbing";
+        }
+        el.scrollLeft = startScroll.current - delta;
+      }
     }
 
     function onPointerUp(event: PointerEvent) {
       dragging.current = false;
       el.style.cursor = "grab";
-      el.releasePointerCapture(event.pointerId);
+      if (el.hasPointerCapture(event.pointerId)) {
+        el.releasePointerCapture(event.pointerId);
+      }
     }
 
     el.addEventListener("pointerdown", onPointerDown);
@@ -110,7 +125,7 @@ export function InfiniteGallery({ items }: { items: Item[] }) {
   return (
     <div
       ref={scrollerRef}
-      className="flex cursor-grab overflow-x-auto py-8 select-none [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      className="flex cursor-grab overflow-x-auto py-10 select-none [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
     >
       {Array.from({ length: COPIES }, (_, copy) => (
         <div key={copy} data-copy className="flex shrink-0 gap-4 pr-4">
@@ -124,13 +139,13 @@ export function InfiniteGallery({ items }: { items: Item[] }) {
                 onClick={(event) => {
                   if (didDrag.current) event.preventDefault();
                 }}
-                className="group relative z-0 w-[220px] shrink-0 sm:w-[260px] hover:z-20"
+                className="lift-card group relative z-0 block w-[220px] origin-center shrink-0 sm:w-[260px]"
               >
                 <ProjectCover
                   title={item.title}
                   tone={cover.tone}
                   image={cover.image}
-                  className="pointer-events-none aspect-[3/4] w-full"
+                  className="aspect-[3/4] w-full"
                 />
               </Link>
             );

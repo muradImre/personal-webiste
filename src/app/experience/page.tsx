@@ -2,19 +2,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageIntro } from "@/components/PageIntro";
 import { getListedExperience } from "@/content/experience";
+import { pageMetadata } from "@/lib/pageMetadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Professional Experience",
-  description: "Reminisce AI, Milkor, and SLB.",
-};
+  description: "A live product, UAV perception, and a multi-user editor and engine.",
+  path: "/experience",
+});
 
 export default function ExperiencePage() {
   const items = getListedExperience();
 
   return (
     <div>
-      <PageIntro title="Professional Experience—">
-        <p>Jobs and internships. Research and projects are separate.</p>
+      <PageIntro title="Professional Experience —">
+        <p>A live product, UAV perception, a multi-user editor and engine.</p>
+        <p className="mt-3 text-[15px] leading-6 opacity-55">Research and coursework are separate pages.</p>
       </PageIntro>
       <ul className="mt-10 px-5 pb-16 md:px-12">
         {items.map((item) => (

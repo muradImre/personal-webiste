@@ -24,24 +24,38 @@ export const experiences: Experience[] = [
     dates: "June 2026 — present",
     liveUrl: "https://reminisce-ai.vercel.app",
     summary:
-      "AI storytelling: family voice recordings into personalized animated films. Live product, piloted with 20 families.",
+      "Families tell a story. Reminisce turns it into an animated film they can watch together. Piloted with 20 families.",
     highlights: [
-      "Founded and shipped an AI storytelling product that transforms family voice recordings into personalized animated films.",
-      "Communicated with 30+ prospective users to assess use cases and identify workflow requirements for product development.",
-      "Built the end-to-end voice-to-video MVP in Node.js and TypeScript, orchestrating scene generation and video synthesis.",
-      "Piloted the product with 20 families, managing onboarding, technical troubleshooting, output quality, and iterative delivery.",
+      "A voice-to-film product people can open — not a demo reel.",
+      "Thirty-plus conversations about how families would actually use it, then a pilot with twenty of them.",
+      "I built the pipeline in Node.js and TypeScript: speech, scenes, then video.",
     ],
     sections: [
       {
-        heading: "The work",
+        heading: "Before the pipeline was mature",
         paragraphs: [
-          "Reminisce takes a family's voice recordings and turns them into a personalized animated film. I founded it, shipped the MVP, and ran the first pilot.",
-          "The pipeline is Node.js and TypeScript: scene generation, then video synthesis. Before that, 30+ conversations about how people would actually use it.",
+          "Someone should be able to sit down, tell a family story naturally, and end up with something they can watch and keep. The hard part is everything between those two moments. People jump around in time, forget names, add context late, and care about details a model does not know are important. The product had to turn that into a coherent film without sanding away what made it personal.",
+          "I talked to more than thirty prospective users before the pipeline was mature: what they would want to preserve, who they would make it for, how comfortable they were recording themselves, and what would make the result feel worth keeping. That research changed the product several times.",
+          "Then I piloted it with twenty families. That is where the useful feedback came from: confusing onboarding, stories that generated badly, scenes that matched the transcript but felt emotionally wrong, and places the system needed more context than I expected.",
+        ],
+      },
+      {
+        heading: "How the system is built",
+        paragraphs: [
+          "I built the pipeline in Node.js and TypeScript. Raw speech becomes a transcript. From there the system has to understand people, places, events, relationships, chronology, and emotional beats, then turn that into a scene plan and structured inputs for visuals and video.",
+          "The hard part is coherence across the whole chain. A mistake early becomes a completely believable but wrong scene several steps later. Each stage has a clear output rather than one giant prompt deciding everything. I added retries and checks around generation because model calls fail in ways normal software does not: an API can succeed while the result is still unusable.",
+        ],
+      },
+      {
+        heading: "What changed once people used it",
+        paragraphs: [
+          "Technical correctness and product quality are different things. A scene can contain the right people and setting and still feel wrong to the family watching it. A generated film can complete successfully and still miss the point of the story.",
+          "That pushed the work toward evaluation, user intent, and where human judgment belongs inside the workflow — without treating the pipeline as a black box.",
         ],
       },
     ],
     tags: ["product", "TypeScript", "Node.js", "LLM"],
-    related: [{ href: "/projects/reminisce", label: "Project page" }],
+    related: [{ href: "/next/reminisce-launch", label: "Public launch" }],
     visibility: "listed",
   },
   {
@@ -51,23 +65,38 @@ export const experiences: Experience[] = [
     location: "Cape Town, South Africa",
     dates: "June 2025 — August 2025",
     summary:
-      "AI computer vision for 3D reconstruction of surroundings, built as a standalone perception system for autonomous UAV platforms.",
+      "Perception for autonomous UAVs: reconstruct the surroundings in 3D, as a system that could ship on an airframe, not a notebook.",
     highlights: [
-      "Engineered an AI computer vision product for 3D reconstruction of its surroundings using Python, C++, Linux, OpenCV.",
-      "Produced a standalone perception system designed for deployment across autonomous UAV drone platforms.",
-      "Debugged hardware interfaces, sensor streams, image processing, and model inference across the end-to-end perception pipeline.",
-      "Tested the system during live UAV demonstrations, processing 100+ GB of flight data to validate perception workflows.",
+      "A standalone 3D-reconstruction stack for UAV platforms — Python, C++, OpenCV, Linux.",
+      "The job was the whole pipeline: sensors, images, inference, and the hardware they arrived on.",
+      "Live flight demos against more than 100 GB of data.",
     ],
     sections: [
       {
-        heading: "The work",
+        heading: "What made it difficult",
         paragraphs: [
-          "Cape Town, summer 2025. The product was perception: reconstruct the surroundings in 3D, then get that system onto autonomous UAV platforms.",
-          "Python, C++, Linux, OpenCV. The debugging was the job — hardware interfaces, sensor streams, image processing, inference — and then live demos against 100+ GB of flight data.",
+          "This was a perception and 3D reconstruction system for autonomous UAV platforms. The goal was not a model that looked good on a prepared dataset. The system had to take data from real sensors, move it through the stack, reconstruct the surroundings, and hold together when it was attached to an aircraft and tested outside.",
+          "Almost every layer could produce the same visible symptom. If the reconstruction looked wrong, the problem might be calibration, a camera stream, IMU timing, ROS communication, image processing, inference, hardware, or the environment itself. There was rarely a useful error saying which layer was responsible.",
+          "A lot of the work became isolating those problems: enough of the entire pipeline to keep moving downward until the real source showed up, instead of patching whatever was visible at the end.",
+        ],
+      },
+      {
+        heading: "The system",
+        paragraphs: [
+          "I worked across cameras and IMUs, ROS/ROS2 data flows, Linux, C/C++, Python, OpenCV, perception logic, inference, and the hardware tying those pieces together.",
+          "ROS was part of the backbone. Sensor data had to be published and consumed with the right timing and the right assumptions about the data. Once multiple sensors and processing stages are involved, the interfaces between components matter as much as the components.",
+          "The objective was a standalone perception system that could be used across UAV platforms, not something that only worked as a development setup.",
+        ],
+      },
+      {
+        heading: "From development to flight",
+        paragraphs: [
+          "We tested against more than 100 GB of real flight data and during live UAV demonstrations. Real flight introduced motion, vibration, lighting changes, imperfect sensor data, timing issues, and conditions that were hard to reproduce at a desk.",
+          "That changed the debug question. Instead of asking whether one component worked, I had to ask whether the whole chain still produced a useful answer when every input was a little less clean than expected.",
         ],
       },
     ],
-    tags: ["computer vision", "UAV", "OpenCV", "Python", "C++"],
+    tags: ["computer vision", "ROS/ROS2", "OpenCV", "Python", "C++"],
     related: [{ href: "/experience/milkor-2023", label: "Earlier intern, 2023" }],
     visibility: "listed",
   },
@@ -78,23 +107,38 @@ export const experiences: Experience[] = [
     location: "Houston, TX",
     dates: "February 2025 — April 2025",
     summary:
-      "Multi-user safety-training platform: custom C# engine, React editor, .NET services, Azure. Built for thousands of users.",
+      "A React editor and C# engine for SLB onboarding. Sessions had to stay in sync: .NET services, Azure, CosmosDB, Redis.",
     highlights: [
-      "Designed and built a multi-user safety-training platform across a custom C# engine, React editor, .NET services, and Azure.",
-      "Evaluated architectural tradeoffs and defined component, data-flow, and class designs for scalable real-time training scenarios.",
-      "Translated internal stakeholder requirements into scalable dynamic multi-user scenarios to support thousands of users.",
-      "Implemented speech parsing, SignalR event handlers, and unit/end-to-end tests to support synchronized application workflow.",
+      "Editor plus engine — people authoring a branching path and people walking it, on one clock.",
+      "The architecture work was boundaries: what talks to what when a thousand people are in the same session.",
+      "Speech parsing and SignalR kept the workflow live. Tests covered that path.",
     ],
     sections: [
       {
-        heading: "The work",
+        heading: "The architecture problem",
         paragraphs: [
-          "A safety-training platform that had to run as a synchronized multi-user scene: custom C# engine, React editor, .NET services, Azure.",
-          "The architecture work was component boundaries, data flow, and class design so those scenarios could scale. Speech parsing and SignalR kept the session in lockstep; tests covered the workflow.",
+          "The system had two sides: an editor used to create branching onboarding experiences, and an engine used to run those experiences for many users at the same time. My work was mainly backend and architecture. The interesting problem was making independently built components behave like one system when state was changing in real time.",
+          "It looked like a normal web application until you asked what happens when hundreds or thousands of people are inside the same experience and their state has to stay consistent. Where does the authoritative state live? Which events need to propagate immediately? What belongs in persistent storage and what belongs in live session state? What happens if two components have different assumptions about the same object? What should the engine know about the editor, and what should stay completely separate?",
+          "Those questions mattered more than any individual endpoint.",
+        ],
+      },
+      {
+        heading: "What I worked on",
+        paragraphs: [
+          "I spent a lot of time on component boundaries, class design, data flow, backend behavior, and how the editor and engine should communicate.",
+          "The stack was a React editor, a C# engine, .NET services, Azure, CosmosDB for what persists, Redis for live session state, and SignalR for real-time behavior. I also worked on speech parsing and tests on the paths where state moved across multiple parts of the system.",
+          "A large part of the architecture work was making sure one decision did not quietly create three different interpretations elsewhere.",
+        ],
+      },
+      {
+        heading: "When the mental models didn't match",
+        paragraphs: [
+          "Different people were building different components, and assumptions that seemed obvious inside one part of the system were not always shared. Integration got slower because some problems were mismatched mental models rather than code defects.",
+          "A few of us pushed for clearer requirements, earlier dependency checks, more direct communication, and better documentation of architectural decisions. A design is only useful if the people building it share the same understanding of it.",
         ],
       },
     ],
-    tags: ["backend", "C#", ".NET", "React", "Azure"],
+    tags: ["backend", "C#", ".NET", "Azure", "CosmosDB"],
     related: [],
     visibility: "listed",
   },
@@ -105,70 +149,37 @@ export const experiences: Experience[] = [
     location: "Cape Town, South Africa",
     dates: "May 2023 — August 2023",
     summary:
-      "Embedded flight-control software for a 12-foot UAV prototype supporting development of the Milkor 380.",
+      "Embedded flight-control software on a 12-foot UAV prototype for the Milkor 380 program.",
     highlights: [
-      "Developed embedded flight-control software for a 12-foot UAV prototype supporting development of the Milkor 380 aircraft.",
-      "Integrated an RTOS to support deterministic task scheduling, responsive flight control, and real-time sensor processing.",
-      "Calibrated and integrated systems, including cameras, LiDAR, radar, and RF components, collecting 15+ hours of flight data.",
+      "Flight control on a 12-foot prototype, with an RTOS underneath so tasks stayed on time.",
+      "Cameras, LiDAR, radar, and RF — calibrated, wired, and flown.",
+      "More than fifteen hours of flight data from those integrations.",
     ],
     sections: [
       {
+        heading: "What was different about embedded work",
+        paragraphs: [
+          "This was my first time writing software attached to something that could leave the ground. I worked on a 12-foot UAV prototype for the Milkor 380 program, with embedded flight-control software underneath it and cameras, LiDAR, radar, RF, and other hardware feeding the system.",
+          "Before this, most of the software I had written lived in environments where the machine underneath it was easy to ignore. Embedded systems remove that. Tasks have deadlines. Sensors produce data on their own schedule. Hardware has physical limits. Timing matters. Memory matters. A component that behaves perfectly in isolation can still cause problems once it shares resources with everything else.",
+        ],
+      },
+      {
         heading: "The work",
         paragraphs: [
-          "First stint at Milkor, on a 12-foot UAV prototype for the Milkor 380 program. The software was embedded flight control.",
-          "An RTOS underneath for deterministic scheduling and real-time sensor processing. Cameras, LiDAR, radar, and RF — calibrated, integrated, and flown for 15+ hours of data.",
+          "I worked in C/C++ around the flight-control stack and an RTOS that handled deterministic scheduling and real-time sensor work.",
+          "I also spent time bringing up and calibrating cameras, LiDAR, radar, and RF. That meant moving between software and hardware: reading data, checking interfaces, figuring out whether something was behaving correctly, then seeing what happened when the aircraft was flown. The integrations produced more than fifteen hours of flight data.",
+        ],
+      },
+      {
+        heading: "Why the software was never abstract",
+        paragraphs: [
+          "If a task ran late, a sensor was wrong, or an interface behaved differently from what the code assumed, the physical system exposed it. The loop either responded correctly, on time, under real conditions, or it did not. That is where the interest in embedded systems and control became serious.",
         ],
       },
     ],
     tags: ["embedded", "UAV", "RTOS", "C++"],
     related: [{ href: "/experience/milkor-2025", label: "Later intern, 2025" }],
     visibility: "listed",
-  },
-  {
-    slug: "weak-ties",
-    role: "Team Lead",
-    org: "Weak-ties Decision Lab, INFORMS",
-    location: "Rice University",
-    dates: "2023 — 2024",
-    summary:
-      "Led a team of 7 on a matching algorithm for students: shared interests, bias toward weak ties, fast enough to use in a room.",
-    highlights: [
-      "Team of 7.",
-      "Optimization and data science for student matching.",
-      "Tuned for real-time results, not overnight batch jobs.",
-    ],
-    sections: [
-      {
-        heading: "The work",
-        paragraphs: [
-          "We matched students on shared interests, with a preference for weak ties over people they already sit with. I led the team. The constraint that mattered was latency: it had to return while people were still there.",
-        ],
-      },
-    ],
-    tags: ["optimization"],
-    related: [],
-    visibility: "unlisted",
-  },
-  {
-    slug: "rice-cs-research",
-    role: "Research Assistant",
-    org: "Rice Computer Science",
-    location: "Houston, TX",
-    dates: "2024",
-    summary:
-      "Biomedical NLP on regulatory text. Best run: 0.902 AUC against a published 0.857.",
-    highlights: [],
-    sections: [
-      {
-        heading: "The work",
-        paragraphs: [
-          "This role is written up under Research: the Rice University fellowship with Dr. Sinan Kockara.",
-        ],
-      },
-    ],
-    tags: ["NLP"],
-    related: [{ href: "/research/biomed-nlp", label: "Research writeup" }],
-    visibility: "unlisted",
   },
 ];
 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <circle cx="880" cy="500" r="268" stroke="#bdbebf" stroke-opacity="0.14" stroke-width="1.4" fill="none"/>
+    <line x1="476.6" y1="495.6" x2="1083.1" y2="371.9" stroke="#bdbebf" stroke-opacity="0.74" stroke-width="1.9" fill="none"/>
+    <path d="M 1089.6 370.6 L 1080.4 378.3 M 1089.6 370.6 L 1078.1 367.1" stroke="#bdbebf" stroke-opacity="0.74" stroke-width="1.9" fill="none"/>
+    <line x1="474.5" y1="510.2" x2="923.1" y2="745.1" stroke="#bdbebf" stroke-opacity="0.74" stroke-width="1.9" fill="none"/>
+    <path d="M 929.0 748.2 L 917.0 748.4 M 929.0 748.2 L 922.3 738.2" stroke="#bdbebf" stroke-opacity="0.74" stroke-width="1.9" fill="none"/>
+    <line x1="473.1" y1="512.6" x2="623.6" y2="617.1" stroke="#bdbebf" stroke-opacity="0.74" stroke-width="1.9" fill="none"/>
+    <path d="M 629.0 620.9 L 617.1 619.6 M 629.0 620.9 L 623.6 610.1" stroke="#bdbebf" stroke-opacity="0.74" stroke-width="1.9" fill="none"/>
+    <circle cx="880.0" cy="232.0" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="949.4" cy="241.1" r="17" stroke="#bdbebf" stroke-opacity="0.28" stroke-width="1.6" fill="none"/>
+    <circle cx="949.4" cy="241.1" r="8" stroke="#bdbebf" stroke-opacity="0.68" stroke-width="2.0" fill="none"/>
+    <circle cx="1014.0" cy="267.9" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="1069.5" cy="310.5" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="1112.1" cy="366.0" r="17" stroke="#bdbebf" stroke-opacity="0.28" stroke-width="1.6" fill="none"/>
+    <circle cx="1112.1" cy="366.0" r="9" stroke="#bdbebf" stroke-opacity="0.92" stroke-width="2.4" fill="none"/>
+    <circle cx="1138.9" cy="430.6" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="1148.0" cy="500.0" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="1138.9" cy="569.4" r="17" stroke="#bdbebf" stroke-opacity="0.28" stroke-width="1.6" fill="none"/>
+    <circle cx="1138.9" cy="569.4" r="8" stroke="#bdbebf" stroke-opacity="0.68" stroke-width="2.0" fill="none"/>
+    <circle cx="1112.1" cy="634.0" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="1069.5" cy="689.5" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="1014.0" cy="732.1" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="949.4" cy="758.9" r="17" stroke="#bdbebf" stroke-opacity="0.28" stroke-width="1.6" fill="none"/>
+    <circle cx="949.4" cy="758.9" r="9" stroke="#bdbebf" stroke-opacity="0.92" stroke-width="2.4" fill="none"/>
+    <circle cx="880.0" cy="768.0" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="810.6" cy="758.9" r="17" stroke="#bdbebf" stroke-opacity="0.28" stroke-width="1.6" fill="none"/>
+    <circle cx="810.6" cy="758.9" r="8" stroke="#bdbebf" stroke-opacity="0.68" stroke-width="2.0" fill="none"/>
+    <circle cx="746.0" cy="732.1" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="690.5" cy="689.5" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="647.9" cy="634.0" r="17" stroke="#bdbebf" stroke-opacity="0.28" stroke-width="1.6" fill="none"/>
+    <circle cx="647.9" cy="634.0" r="9" stroke="#bdbebf" stroke-opacity="0.92" stroke-width="2.4" fill="none"/>
+    <circle cx="621.1" cy="569.4" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="612.0" cy="500.0" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="621.1" cy="430.6" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="647.9" cy="366.0" r="17" stroke="#bdbebf" stroke-opacity="0.28" stroke-width="1.6" fill="none"/>
+    <circle cx="647.9" cy="366.0" r="8" stroke="#bdbebf" stroke-opacity="0.68" stroke-width="2.0" fill="none"/>
+    <circle cx="690.5" cy="310.5" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="746.0" cy="267.9" r="17" stroke="#bdbebf" stroke-opacity="0.28" stroke-width="1.6" fill="none"/>
+    <circle cx="746.0" cy="267.9" r="8" stroke="#bdbebf" stroke-opacity="0.68" stroke-width="2.0" fill="none"/>
+    <circle cx="810.6" cy="241.1" r="17" stroke="#bdbebf" stroke-opacity="0.3" stroke-width="1.6" fill="none"/>
+    <circle cx="455" cy="500" r="20" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="2.4" fill="none"/>
+    <circle cx="455" cy="500" r="7" stroke="#bdbebf" stroke-opacity="0.7" stroke-width="1.6" fill="none"/>
+  </g>
+</svg>

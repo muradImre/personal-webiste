@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Portrait } from "@/components/Portrait";
-import { WorkGallery, WorkList } from "@/components/WorkList";
-import { site } from "@/content/site";
+import { HomeHero } from "@/components/HomeHero";
+import { DimList } from "@/components/DimList";
+import { WorkGallery } from "@/components/WorkGallery";
+import { WorkList } from "@/components/WorkList";
 import { getFeaturedWork, projectHref } from "@/content/work";
 
 const homeIndex = [
@@ -22,34 +23,26 @@ export default function Home() {
 
   return (
     <div>
-      <section className="grid items-end gap-10 px-5 pt-8 md:px-12 md:pt-10 lg:grid-cols-[minmax(0,1fr)_240px]">
-        <div>
-          <p className="text-[16px]">{site.role}</p>
-          <h1 className="display mt-6 max-w-[11ch] text-[clamp(4.8rem,16vw,12.5rem)]">
-            {site.name}—
-          </h1>
-        </div>
-        <Portrait className="h-[16rem] w-[12.5rem] justify-self-start sm:h-[20rem] sm:w-[15.5rem] lg:justify-self-end" />
-      </section>
+      <HomeHero />
 
-      <nav aria-label="Site" className="mt-20 px-5 md:mt-28 md:px-12">
-        <ul className="[&:hover_a]:opacity-35">
+      <nav aria-label="Site" className="relative z-10 bg-paper px-5 pt-6 pb-10 md:px-12 md:pb-8">
+        <DimList>
           {homeIndex.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="block border-t border-ink/15 py-5 opacity-100 transition-opacity duration-200 last:border-b hover:!opacity-100 md:py-7"
+                className="block border-t border-ink/15 py-5 opacity-100 transition-opacity duration-200 last:border-b md:py-7"
               >
                 <span className="display text-[clamp(3.4rem,11vw,9rem)]">{item.label}</span>
               </Link>
             </li>
           ))}
-        </ul>
+        </DimList>
       </nav>
 
-      <section className="mt-28 px-5 pb-8 md:mt-36 md:px-12">
+      <section className="relative z-10 mt-28 bg-paper px-5 pb-8 md:mt-36 md:px-12">
         <div className="mb-6 flex items-end justify-between">
-          <h2 className="text-[16px]">Recent projects</h2>
+          <h2 className="text-[16px]">Current work</h2>
           <Link href="/projects" className="text-[16px] opacity-70 hover:opacity-100">
             All projects
           </Link>

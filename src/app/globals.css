@@ -8,6 +8,9 @@
   --muted: #505153;
   --rule: #a8a9ab;
   --accent: #1c1d20;
+  --end: 0;
+  --end-bar: 0;
+  --hero: 0;
 }
 
 @theme inline {
@@ -24,12 +27,13 @@
 }
 
 html {
-  background: var(--paper);
+  background: color-mix(in srgb, var(--paper) calc((1 - var(--end)) * 100%), #141516 calc(var(--end) * 100%));
+  overflow-x: clip;
   scroll-behavior: smooth;
 }
 
 body {
-  background: var(--paper);
+  background: transparent;
   color: var(--ink);
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   font-feature-settings: "ss01" on, "cv11" on;
@@ -65,6 +69,231 @@ button {
   padding: 0.9rem 1.6rem;
   font-size: 0.95rem;
   line-height: 1;
+  color: var(--ink);
+}
+
+a.pill {
+  color: var(--ink);
+}
+
+a.pill-solid {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+a.pill-line {
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+
+a.pill:hover,
+a.pill:active {
+  opacity: 0.82;
+}
+
+a.pill-line:hover,
+a.pill-line:active {
+  background: var(--ink);
+  color: var(--paper);
+  opacity: 1;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 40;
+  color: color-mix(
+    in srgb,
+    var(--ink) calc((1 - max(var(--hero), var(--end-bar))) * 100%),
+    var(--paper) calc(max(var(--hero), var(--end-bar)) * 100%)
+  );
+}
+
+.site-header-home:not(.is-past-hero) {
+  color: var(--paper);
+}
+
+.site-end {
+  background: color-mix(in srgb, var(--paper) calc((1 - var(--end)) * 100%), #141516 calc(var(--end) * 100%));
+  color: color-mix(in srgb, var(--ink) calc((1 - var(--end)) * 100%), var(--paper) calc(var(--end) * 100%));
+}
+
+.page-curtain {
+  position: fixed;
+  top: -26vw;
+  left: 50%;
+  z-index: 80;
+  display: flex;
+  width: 170vw;
+  height: calc(100svh + 52vw);
+  align-items: flex-end;
+  justify-content: center;
+  margin-left: -85vw;
+  border-radius: 50% / 26vw;
+  background: #1c1d20;
+  color: #bdbebf;
+  pointer-events: none;
+  transform: translate3d(0, 100%, 0);
+}
+
+.page-curtain-copy {
+  position: absolute;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  bottom: calc(26vw + 28svh);
+}
+
+.page-curtain-copy p {
+  opacity: 0;
+}
+
+.page-curtain-cover {
+  pointer-events: auto;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.48s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.page-curtain-cover .page-curtain-copy p {
+  opacity: 1;
+  transition: opacity 0.3s ease 0.18s;
+}
+
+.page-curtain-reveal {
+  transform: translate3d(0, -100%, 0);
+  transition: transform 0.58s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.page-curtain-reveal .page-curtain-copy p {
+  opacity: 1;
+}
+
+.page-curtain-idle {
+  transition: none;
+}
+
+.page-curtain-idle .page-curtain-copy p {
+  opacity: 0;
+  transition: none;
+}
+
+.page-enter {
+  animation: page-enter 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+html[data-curtain] .page-enter {
+  animation: none;
+  opacity: 1;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes about-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.about-orbit {
+  animation: about-orbit 26s linear infinite;
+}
+
+.lift-card {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dim-siblings a {
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.18s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dim-siblings:hover a {
+    opacity: 0.35;
+  }
+
+  .dim-siblings:hover a:hover {
+    opacity: 1;
+  }
+
+  .lift-card {
+    transition: transform 0.2s ease-out;
+  }
+
+  .lift-card:hover {
+    z-index: 50;
+    transform: translateY(-0.5rem) scale(1.1);
+  }
+}
+
+.dim-siblings.is-pressing a {
+  opacity: 0.35;
+}
+
+.dim-siblings.is-pressing a.is-hot {
+  opacity: 1;
+}
+
+.lift-card.is-up,
+.lift-card:active {
+  z-index: 50;
+  transform: translateY(-0.5rem) scale(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .about-orbit,
+  .hero-photo {
+    animation: none;
+    transform: none !important;
+  }
+
+  .page-enter,
+  .page-curtain-cover,
+  .page-curtain-reveal {
+    animation: none;
+    transition: none;
+    transform: none !important;
+  }
+
+  .lift-card {
+    transition: none;
+  }
+
+  .lift-card:hover,
+  .lift-card.is-up,
+  .lift-card:active {
+    transform: none !important;
+  }
+
+  .dim-siblings a {
+    transition: none;
+  }
+
+  .dim-siblings:hover a,
+  .dim-siblings:hover a:hover,
+  .dim-siblings.is-pressing a,
+  .dim-siblings.is-pressing a.is-hot {
+    opacity: 1;
+  }
 }
 
 @media print {

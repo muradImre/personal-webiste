@@ -14,6 +14,7 @@ export type ResearchItem = {
   sections: Section[];
   tags: string[];
   related: Related[];
+  repoUrl?: string;
   visibility: Visibility;
 };
 
@@ -29,24 +30,38 @@ export const research: ResearchItem[] = [
     dates: "January 2026 — May 2026",
     status: "completed",
     summary:
-      "Schema-resolution and streaming JSON validation: collapse duplicate definitions, catch naming collisions, and test the rewrite so silent conflicts don't reach downstream consumers.",
+      "How can a schema-processing system safely combine and rewrite JSON Schema definitions without silently changing what downstream references mean?",
     sections: [
       {
-        heading: "What I built",
+        heading: "The core problem",
         paragraphs: [
-          "A schema-resolution pipeline that eliminated duplicate and conflicting schema definitions before they reached downstream consumers.",
-          "A two-pass rewrite that detects schema collisions and generates internal references, so a naming conflict can't fail silently.",
-          "Regression tests and graph-based tests that improved correctness coverage for streaming JSON validation workflows.",
+          "When schemas are composed from multiple sources, definitions can be duplicated, renamed, or collide with other definitions that happen to use the same identifier.",
+          "Some duplicates should collapse into one definition. Others may share a name while representing different structures and need to stay separate. The dangerous case is when the system chooses incorrectly but still produces syntactically valid JSON: references resolve, downstream validation continues, and the system is operating on the wrong schema.",
+        ],
+      },
+      {
+        heading: "Approach",
+        paragraphs: [
+          "I worked on a schema-resolution pipeline that detects duplicate and conflicting definitions before they propagate downstream.",
+          "The transformation ran in stages: identify collisions, decide whether definitions are equivalent or distinct, rewrite conflicting definitions where necessary, and update internal references so the original relationships stay intact.",
+          "Because schemas can reference one another recursively, I treated the problem as a graph rather than as isolated JSON objects. That meant testing both individual transformations and the dependency structure those transformations created.",
+        ],
+      },
+      {
+        heading: "Testing",
+        paragraphs: [
+          "I built regression tests around known failure cases and graph-based tests around reference resolution. The important property was stronger than “the output is valid JSON.” The transformed schema had to preserve the meaning of every reference after rewriting.",
+          "Syntactic validity can succeed while semantic correctness fails. Once schemas define symbols, reference other definitions, and get composed and rewritten across scopes, the work looks a lot like names, binding, identity, dependency graphs, and compiler passes.",
         ],
       },
     ],
-    tags: ["compilers", "schema", "testing", "streaming"],
+    tags: ["JSON Schema", "compilers", "testing", "streaming"],
     related: [],
     visibility: "listed",
   },
   {
     slug: "biomed-nlp",
-    title: "Machine Learning Research — Rice University Fellowship",
+    title: "Biomedical NLP",
     venue: "Rice Computer Science",
     advisor: "Dr. Sinan Kockara",
     role: "Research Engineer",
@@ -55,20 +70,27 @@ export const research: ResearchItem[] = [
     dates: "May 2024 — August 2024",
     status: "completed",
     summary:
-      "Biomedical NLP classifier at 0.902 AUC against a 0.857 benchmark, then the same labels against a RAG baseline.",
+      "How much can a domain-specific language model improve biomedical classification when the dataset is cleaned and expanded, and how does that compare with retrieval on the same task?",
     sections: [
       {
-        heading: "The work",
+        heading: "Approach",
         paragraphs: [
-          "Developed and fine-tuned a biomedical NLP classifier that reached 0.902 AUC, above the 0.857 published benchmark.",
-          "Built PyTorch training and inference pipelines on BioMedLM, including preprocessing and evaluation.",
-          "Updated 10,000+ benchmark records through web scraping so the training set matched the labels we actually needed.",
-          "Benchmarked against a RAG baseline: 6 percentage points higher F1, and more consistent biomedical classification.",
+          "I first worked on the dataset itself. The existing records contained stale and inconsistent information, so I scraped, updated, and added more than 10,000 records before training.",
+          "I then built a PyTorch training and inference pipeline around BioMedLM and iterated on preprocessing, training, and evaluation. I compared the classifier against the published benchmark and also built a RAG baseline on the same labels so both approaches could be scored under the same task.",
+        ],
+      },
+      {
+        heading: "Results",
+        paragraphs: [
+          "The fine-tuned classifier reached 0.902 AUC against a 0.857 published benchmark. Against the RAG baseline, the fine-tuned model finished six percentage points higher in F1.",
+          "Model performance was determined as much before training as during it. Fixing the data and labels mattered as much as many of the modeling decisions. Two systems can look competitive under one metric while failing in different ways, so class-level behavior and failure cases mattered as much as the headline number.",
+          "Retrieval is powerful, but it is not automatically the right architecture for every problem. For this classification task, the fine-tuned model was more stable and performed better on the labels we cared about.",
         ],
       },
     ],
     tags: ["NLP", "PyTorch", "BioMedLM", "RAG"],
-    related: [{ href: "/projects/bionlp-classifier", label: "Code" }],
+    related: [],
+    repoUrl: "https://github.com/muradImre/BioNLPClassifier",
     visibility: "listed",
   },
 ];

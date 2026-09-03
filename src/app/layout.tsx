@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Inter_Tight } from "next/font/google";
+import { AppMain } from "@/components/AppMain";
+import { PageCurtain } from "@/components/PageCurtain";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { site } from "@/content/site";
@@ -23,22 +25,33 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description: site.description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: site.title,
     description: site.description,
-    url: site.url,
+    url: "/",
     siteName: site.name,
     locale: "en_US",
     type: "website",
+    images: [{ url: site.portrait }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.description,
+    images: [site.portrait],
   },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${sans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col bg-paper text-ink">
+    <html lang="en" className={`${sans.variable} ${geistMono.variable} h-full antialiased`} data-scroll-behavior="smooth">
+      <body className="flex min-h-full flex-col text-ink">
+        <PageCurtain />
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <AppMain>{children}</AppMain>
         <SiteFooter />
       </body>
     </html>

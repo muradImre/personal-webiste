@@ -1,7 +1,3 @@
-export function dateRange(start: string, end: string | null) {
-  return end ? `${start} — ${end}` : `${start} — now`;
-}
-
 export function kindLabel(kind: string) {
   switch (kind) {
     case "systems":

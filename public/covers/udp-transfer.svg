@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <rect x="500" y="200" width="620" height="44" rx="12" stroke="#bdbebf" stroke-opacity="0.68" stroke-width="2.2" fill="none"/>
+    <rect x="500" y="756" width="620" height="44" rx="12" stroke="#bdbebf" stroke-opacity="0.68" stroke-width="2.2" fill="none"/>
+    <line x1="548.0" y1="244.0" x2="626.9" y2="748.9" stroke="#bdbebf" stroke-opacity="0.86" stroke-width="2.2" fill="none"/>
+    <path d="M 628.0 756.0 L 620.1 745.7 M 628.0 756.0 L 632.4 743.8" stroke="#bdbebf" stroke-opacity="0.86" stroke-width="2.2" fill="none"/>
+    <rect x="570.0" y="446.0" width="36" height="24" rx="5" stroke="#bdbebf" stroke-opacity="0.88" stroke-width="1.9" fill="none"/>
+    <line x1="668.0" y1="756.0" x2="746.9" y2="251.1" stroke="#bdbebf" stroke-opacity="0.5" stroke-width="1.95" fill="none"/>
+    <path d="M 748.0 244.0 L 752.4 256.2 M 748.0 244.0 L 740.1 254.3" stroke="#bdbebf" stroke-opacity="0.5" stroke-width="1.95" fill="none"/>
+    <rect x="690.0" y="530.0" width="36" height="24" rx="5" stroke="#bdbebf" stroke-opacity="0.48" stroke-width="1.9" fill="none"/>
+    <line x1="768.0" y1="244.0" x2="846.9" y2="748.9" stroke="#bdbebf" stroke-opacity="0.86" stroke-width="2.2" fill="none"/>
+    <path d="M 848.0 756.0 L 840.1 745.7 M 848.0 756.0 L 852.4 743.8" stroke="#bdbebf" stroke-opacity="0.86" stroke-width="2.2" fill="none"/>
+    <rect x="790.0" y="446.0" width="36" height="24" rx="5" stroke="#bdbebf" stroke-opacity="0.88" stroke-width="1.9" fill="none"/>
+    <line x1="888.0" y1="756.0" x2="966.9" y2="251.1" stroke="#bdbebf" stroke-opacity="0.5" stroke-width="1.95" fill="none"/>
+    <path d="M 968.0 244.0 L 972.4 256.2 M 968.0 244.0 L 960.1 254.3" stroke="#bdbebf" stroke-opacity="0.5" stroke-width="1.95" fill="none"/>
+    <rect x="910.0" y="530.0" width="36" height="24" rx="5" stroke="#bdbebf" stroke-opacity="0.48" stroke-width="1.9" fill="none"/>
+    <line x1="988.0" y1="244.0" x2="1007.6" y2="465.1" stroke="#bdbebf" stroke-opacity="0.38" stroke-width="1.95" fill="none" stroke-dasharray="8 7"/>
+    <path d="M 1008.0 470.0 L 1003.0 462.5 M 1008.0 470.0 L 1011.6 461.8" stroke="#bdbebf" stroke-opacity="0.38" stroke-width="1.95" fill="none"/>
+    <rect x="978.0" y="343.0" width="36" height="24" rx="5" stroke="#bdbebf" stroke-opacity="0.32" stroke-width="1.6" fill="none"/>
+    <path d="M 996.0 458.0 L 1020.0 482.0 M 1020.0 458.0 L 996.0 482.0" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="2.35" fill="none"/>
+    <line x1="1038.0" y1="244.0" x2="1109.0" y2="748.9" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="2.35" fill="none"/>
+    <path d="M 1110.0 756.0 L 1102.2 745.6 M 1110.0 756.0 L 1114.6 743.8" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="2.35" fill="none"/>
+    <rect x="1056.0" y="446.0" width="36" height="24" rx="5" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="1.9" fill="none"/>
+    <line x1="1095.0" y1="756.0" x2="1111.8" y2="251.1" stroke="#bdbebf" stroke-opacity="0.5" stroke-width="1.95" fill="none"/>
+    <path d="M 1112.0 244.0 L 1117.9 255.6 M 1112.0 244.0 L 1105.4 255.2" stroke="#bdbebf" stroke-opacity="0.5" stroke-width="1.95" fill="none"/>
+    <rect x="1086.0" y="530.0" width="36" height="24" rx="5" stroke="#bdbebf" stroke-opacity="0.48" stroke-width="1.9" fill="none"/>
+  </g>
+</svg>

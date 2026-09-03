@@ -1,22 +1,49 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { RelatedList, Sections, TagList } from "@/components/ArticleBody";
-import { BackLink } from "@/components/PageIntro";
+import { Article, ArticleHead, BackLink } from "@/components/PageIntro";
 import { ProjectCover } from "@/components/ProjectCover";
 import { getCover } from "@/content/covers";
-import { experiences, getExperience } from "@/content/experience";
+import { getExperience, getListedExperience } from "@/content/experience";
+import { pageMetadata } from "@/lib/pageMetadata";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return experiences.map((item) => ({ slug: item.slug }));
+  return getListedExperience().map((item) => ({ slug: item.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = getExperience(slug);
   if (!item) return {};
-  return { title: `${item.role}, ${item.org}`, description: item.summary };
+  const cover = getCover(item.slug);
+  return pageMetadata({
+    title: `${item.role}, ${item.org}`,
+    description: item.summary,
+    path: `/experience/${item.slug}`,
+    image: cover.image ?? undefined,
+  });
+}
+
+function LiveProductLink({ href, name }: { href: string; name: string }) {
+  const host = new URL(href).host.replace(/^www\./, "");
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="mt-8 flex max-w-sm items-center justify-between gap-4 rounded-2xl bg-ink px-5 py-4 text-paper"
+    >
+      <span>
+        <span className="block text-[16px] text-paper">Visit {name}</span>
+        <span className="mt-1.5 block text-[13px] text-paper/60">{host}</span>
+      </span>
+      <span className="text-[15px] opacity-70" aria-hidden="true">
+        →
+      </span>
+    </a>
+  );
 }
 
 export default async function ExperienceDetailPage({ params }: Props) {
@@ -26,37 +53,28 @@ export default async function ExperienceDetailPage({ params }: Props) {
   const cover = getCover(item.slug);
 
   return (
-    <article>
+    <Article>
       <BackLink href="/experience" label="Professional Experience" />
-      <div className="px-5 pt-6 md:px-10">
-        <p className="text-sm text-muted">
-          {item.dates} · {item.location}
-        </p>
-        <h1 className="display mt-4 max-w-[14ch] text-[clamp(3.2rem,9vw,7.5rem)]">{item.org}</h1>
-        <p className="mt-3 text-2xl text-ink-soft">{item.role}</p>
-        <p className="mt-6 max-w-2xl text-[19px] leading-8 text-ink-soft">{item.summary}</p>
+      <ArticleHead kicker={`${item.dates} · ${item.location}`} title={item.org}>
+        <p className="text-2xl text-ink-soft">{item.role}</p>
+        <p className="mt-4 text-[19px] leading-8 text-ink-soft">{item.summary}</p>
         <TagList tags={item.tags} />
-        {item.liveUrl ? (
-          <p className="mt-8 text-[15px]">
-            <a href={item.liveUrl} target="_blank" rel="noreferrer">
-              Open live
-            </a>
-          </p>
-        ) : null}
-      </div>
+        {item.liveUrl ? <LiveProductLink href={item.liveUrl} name={item.org} /> : null}
+      </ArticleHead>
 
-      <div className="px-5 py-12 md:px-10">
+      <div className="mt-10 xl:mt-14">
         <ProjectCover
           title={item.org}
           tone={cover.tone}
           image={cover.image}
-          className="aspect-[16/10] w-full max-w-5xl"
+          showTitle={false}
+          className="aspect-[4/3] w-full sm:aspect-[16/10]"
         />
       </div>
 
-      <div className="max-w-2xl px-5 pb-16 md:px-10">
+      <div className="mx-auto max-w-2xl">
         {item.highlights.length > 0 ? (
-          <section>
+          <section className="mt-12">
             <h2 className="display text-[clamp(1.6rem,3vw,2.4rem)]">In short</h2>
             <ul className="mt-4 space-y-3 text-[17px] leading-8 text-ink-soft">
               {item.highlights.map((highlight) => (
@@ -66,8 +84,9 @@ export default async function ExperienceDetailPage({ params }: Props) {
           </section>
         ) : null}
         <Sections sections={item.sections} />
+        {item.liveUrl ? <LiveProductLink href={item.liveUrl} name={item.org} /> : null}
         <RelatedList items={item.related} />
       </div>
-    </article>
+    </Article>
   );
 }

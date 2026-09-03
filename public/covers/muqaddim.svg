@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <g stroke="#bdbebf" stroke-opacity="0.62" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round">
+    <!-- app window -->
+    <rect x="470" y="120" width="660" height="760" rx="22"/>
+    <!-- sidebar -->
+    <path d="M612 120 V880"/>
+    <rect x="492" y="148" width="96" height="18" rx="4"/>
+    <rect x="492" y="196" width="108" height="28" rx="8"/>
+    <rect x="492" y="236" width="108" height="22" rx="6"/>
+    <rect x="492" y="266" width="108" height="22" rx="6"/>
+    <rect x="492" y="318" width="48" height="8" rx="2"/>
+    <rect x="492" y="340" width="108" height="22" rx="6"/>
+    <rect x="492" y="370" width="108" height="22" rx="6"/>
+    <rect x="492" y="400" width="108" height="22" rx="6"/>
+    <rect x="492" y="430" width="108" height="22" rx="6"/>
+    <rect x="492" y="828" width="108" height="22" rx="6"/>
+    <!-- log bar -->
+    <rect x="636" y="148" width="468" height="40" rx="10"/>
+    <rect x="1044" y="156" width="48" height="24" rx="6"/>
+    <rect x="636" y="200" width="52" height="18" rx="5"/>
+    <rect x="698" y="200" width="72" height="18" rx="5"/>
+    <!-- day card -->
+    <rect x="636" y="236" width="468" height="612" rx="16"/>
+    <rect x="660" y="256" width="140" height="14" rx="3"/>
+    <rect x="660" y="280" width="280" height="7" rx="2"/>
+    <!-- 24 hour rows, two blocks -->
+    <g id="grid">
+      <path d="M712 304 V816"/>
+      <path d="M868 304 V816"/>
+    </g>
+  </g>
+  <!-- generated hour rows -->
+  <g stroke="#bdbebf" stroke-opacity="0.5" stroke-width="1.25" fill="none">
+    <rect x="664" y="304" width="40" height="10" rx="2"/>
+    <rect x="720" y="300" width="140" height="18" rx="4"/>
+    <rect x="876" y="300" width="204" height="18" rx="4"/>
+    <rect x="664" y="326" width="40" height="10" rx="2"/>
+    <rect x="720" y="322" width="140" height="18" rx="4"/>
+    <rect x="876" y="322" width="204" height="18" rx="4"/>
+    <rect x="664" y="348" width="40" height="10" rx="2"/>
+    <rect x="720" y="344" width="140" height="18" rx="4"/>
+    <rect x="876" y="344" width="204" height="18" rx="4"/>
+    <rect x="664" y="370" width="40" height="10" rx="2"/>
+    <rect x="720" y="366" width="140" height="18" rx="4"/>
+    <rect x="876" y="366" width="204" height="18" rx="4"/>
+    <rect x="664" y="392" width="40" height="10" rx="2"/>
+    <rect x="720" y="388" width="140" height="18" rx="4"/>
+    <rect x="876" y="388" width="204" height="18" rx="4"/>
+    <rect x="664" y="414" width="40" height="10" rx="2"/>
+    <rect x="720" y="410" width="140" height="18" rx="4"/>
+    <rect x="876" y="410" width="204" height="18" rx="4"/>
+    <rect x="664" y="436" width="40" height="10" rx="2"/>
+    <rect x="720" y="432" width="140" height="18" rx="4"/>
+    <rect x="876" y="432" width="204" height="18" rx="4"/>
+    <rect x="664" y="458" width="40" height="10" rx="2"/>
+    <rect x="720" y="454" width="140" height="18" rx="4"/>
+    <rect x="876" y="454" width="204" height="18" rx="4"/>
+    <rect x="664" y="480" width="40" height="10" rx="2"/>
+    <rect x="720" y="476" width="140" height="18" rx="4"/>
+    <rect x="876" y="476" width="204" height="18" rx="4"/>
+    <rect x="664" y="502" width="40" height="10" rx="2"/>
+    <rect x="720" y="498" width="140" height="18" rx="4"/>
+    <rect x="876" y="498" width="204" height="18" rx="4"/>
+    <rect x="664" y="524" width="40" height="10" rx="2"/>
+    <rect x="720" y="520" width="140" height="18" rx="4"/>
+    <rect x="876" y="520" width="204" height="18" rx="4"/>
+    <rect x="664" y="546" width="40" height="10" rx="2"/>
+    <rect x="720" y="542" width="140" height="18" rx="4"/>
+    <rect x="876" y="542" width="204" height="18" rx="4"/>
+    <rect x="664" y="568" width="40" height="10" rx="2"/>
+    <rect x="720" y="564" width="140" height="18" rx="4"/>
+    <rect x="876" y="564" width="204" height="18" rx="4"/>
+    <rect x="664" y="590" width="40" height="10" rx="2"/>
+    <rect x="720" y="586" width="140" height="18" rx="4"/>
+    <rect x="876" y="586" width="204" height="18" rx="4"/>
+    <rect x="664" y="612" width="40" height="10" rx="2"/>
+    <rect x="720" y="608" width="140" height="18" rx="4"/>
+    <rect x="876" y="608" width="204" height="18" rx="4"/>
+    <rect x="664" y="634" width="40" height="10" rx="2"/>
+    <rect x="720" y="630" width="140" height="18" rx="4"/>
+    <rect x="876" y="630" width="204" height="18" rx="4"/>
+    <rect x="664" y="656" width="40" height="10" rx="2"/>
+    <rect x="720" y="652" width="140" height="18" rx="4"/>
+    <rect x="876" y="652" width="204" height="18" rx="4"/>
+    <rect x="664" y="678" width="40" height="10" rx="2"/>
+    <rect x="720" y="674" width="140" height="18" rx="4"/>
+    <rect x="876" y="674" width="204" height="18" rx="4"/>
+    <rect x="664" y="700" width="40" height="10" rx="2"/>
+    <rect x="720" y="696" width="140" height="18" rx="4"/>
+    <rect x="876" y="696" width="204" height="18" rx="4"/>
+    <rect x="664" y="722" width="40" height="10" rx="2"/>
+    <rect x="720" y="718" width="140" height="18" rx="4"/>
+    <rect x="876" y="718" width="204" height="18" rx="4"/>
+    <rect x="664" y="744" width="40" height="10" rx="2"/>
+    <rect x="720" y="740" width="140" height="18" rx="4"/>
+    <rect x="876" y="740" width="204" height="18" rx="4"/>
+    <rect x="664" y="766" width="40" height="10" rx="2"/>
+    <rect x="720" y="762" width="140" height="18" rx="4"/>
+    <rect x="876" y="762" width="204" height="18" rx="4"/>
+    <rect x="664" y="788" width="40" height="10" rx="2"/>
+    <rect x="720" y="784" width="140" height="18" rx="4"/>
+    <rect x="876" y="784" width="204" height="18" rx="4"/>
+  </g>
+  <!-- first hour as one see-through span (logged block) -->
+  <rect x="720" y="300" width="360" height="18" rx="4" fill="none" stroke="#bdbebf" stroke-opacity="0.9" stroke-width="2"/>
+  <!-- legend dots -->
+  <g fill="none" stroke="#bdbebf" stroke-opacity="0.55" stroke-width="1.25">
+    <circle cx="676" cy="822" r="4"/>
+    <circle cx="724" cy="822" r="4"/>
+    <circle cx="772" cy="822" r="4"/>
+    <circle cx="820" cy="822" r="4"/>
+    <circle cx="868" cy="822" r="4"/>
+    <circle cx="916" cy="822" r="4"/>
+    <circle cx="964" cy="822" r="4"/>
+    <circle cx="1012" cy="822" r="4"/>
+  </g>
+</svg>

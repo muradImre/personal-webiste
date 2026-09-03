@@ -3,11 +3,13 @@ import { InfiniteGallery } from "@/components/InfiniteGallery";
 import { PageIntro } from "@/components/PageIntro";
 import { WorkList } from "@/components/WorkList";
 import { getListedProjects, projectHref } from "@/content/work";
+import { pageMetadata } from "@/lib/pageMetadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Projects",
-  description: "Things I built — systems and personal.",
-};
+  description: "Systems and personal work — compilers, allocators, routing, and tools I actually use.",
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   const items = getListedProjects().map((item) => ({
@@ -20,8 +22,8 @@ export default function ProjectsPage() {
 
   return (
     <div>
-      <PageIntro title="Projects—">
-        <p>Everything I built. Labels are Systems or Personal.</p>
+      <PageIntro title="Projects —">
+        <p>The systems and tools behind that sentence. Labels are Systems or Personal.</p>
       </PageIntro>
       <div className="pt-10 pb-16">
         <InfiniteGallery items={items} />

@@ -1,16 +1,13 @@
-"use client";
+import { site } from "@/content/site";
 
 export function Portrait({ className = "" }: { className?: string }) {
   return (
-    <div className={`overflow-hidden rounded-[1.75rem] bg-[#8d8e90] ${className}`}>
+    <div className={`overflow-hidden rounded-2xl bg-[#2a2a2c] ${className}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/me.jpg"
-        alt="Murad Imre"
-        className="h-full w-full object-cover"
-        onError={(event) => {
-          event.currentTarget.style.display = "none";
-        }}
+        src={site.portrait}
+        alt={site.name}
+        className="h-full w-full object-cover object-top"
       />
     </div>
   );

@@ -17,12 +17,12 @@ export const ideas: Idea[] = [
     title: "Document coder",
     stage: "budding",
     updated: "2026",
-    summary: "A tool for working with documents in code. It's on the projects list; next is finishing it so someone else can actually use it.",
+    summary: "Finish the document tool so someone else can actually use it — writeup, stack, a link, a version that isn't just mine.",
     sections: [
       {
         heading: "Next",
         paragraphs: [
-          "The stub is already on this site. What's missing is the thing you'd hand someone: the writeup, the stack, a live or repo link, and a version that isn't just mine.",
+          "I already run this. What's missing is the thing you'd hand a teammate: how it's built, where the code lives, and a first-run that doesn't assume I wrote it.",
         ],
       },
     ],
@@ -63,10 +63,7 @@ export const ideas: Idea[] = [
         ],
       },
     ],
-    related: [
-      { href: "/projects/reminisce", label: "Project page" },
-      { href: "/experience/reminisce", label: "Professional experience" },
-    ],
+    related: [{ href: "/experience/reminisce", label: "Professional experience" }],
     visibility: "listed",
   },
 ];

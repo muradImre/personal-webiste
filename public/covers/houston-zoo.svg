@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <g stroke="#bdbebf" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 380 280 L 980 280 L 1140 160 L 540 160 Z" stroke-opacity="0.68" stroke-width="3"/>
+    <path d="M 380 280 L 980 280 L 980 780 L 380 780 Z" stroke-opacity="0.94" stroke-width="3.4"/>
+    <path d="M 980 280 L 1140 160 L 1140 660 L 980 780 Z" stroke-opacity="0.7" stroke-width="3"/>
+    <rect x="430" y="330" width="400" height="380" rx="14" stroke-opacity="0.9" stroke-width="2.6"/>
+    <path d="M 830 500 L 860 500" stroke-opacity="0.7" stroke-width="2.4"/>
+    <circle cx="874" cy="500" r="9" stroke-opacity="0.78" stroke-width="2"/>
+    <path d="M 500 640 C 560 600, 700 600, 760 640" stroke-opacity="0.72" stroke-width="2.2"/>
+    <path d="M 520 640 L 740 640" stroke-opacity="0.38" stroke-width="1.6"/>
+    <ellipse cx="630" cy="598" rx="46" ry="28" stroke-opacity="0.92" stroke-width="2.4"/>
+    <circle cx="678" cy="580" r="16" stroke-opacity="0.92" stroke-width="2.2"/>
+    <path d="M 694 580 L 712 574 L 694 588 Z" stroke-opacity="0.88" stroke-width="1.8"/>
+    <path d="M 608 608 L 598 632" stroke-opacity="0.7" stroke-width="1.8"/>
+    <path d="M 650 610 L 656 632" stroke-opacity="0.7" stroke-width="1.8"/>
+    <path d="M 410 360 L 410 400" stroke-opacity="0.55" stroke-width="2"/>
+    <path d="M 410 420 L 410 460" stroke-opacity="0.55" stroke-width="2"/>
+    <path d="M 410 480 L 410 520" stroke-opacity="0.55" stroke-width="2"/>
+    <path d="M 410 540 L 410 580" stroke-opacity="0.55" stroke-width="2"/>
+    <path d="M 410 600 L 410 640" stroke-opacity="0.55" stroke-width="2"/>
+    <path d="M 470 700 C 510 680, 550 720, 590 700 C 630 680, 670 720, 710 700 C 750 680, 790 720, 830 700" stroke-opacity="0.86" stroke-width="2.4"/>
+    <circle cx="1070" cy="360" r="54" stroke-opacity="0.92" stroke-width="2.8"/>
+    <path d="M 1070 360 L 1044 328" stroke-opacity="0.94" stroke-width="2.6"/>
+    <circle cx="1070" cy="360" r="4" stroke-opacity="0.94" stroke-width="2"/>
+    <path d="M 1070 314 L 1070 322" stroke-opacity="0.5" stroke-width="1.6"/>
+    <path d="M 1116 360 L 1108 360" stroke-opacity="0.5" stroke-width="1.6"/>
+    <path d="M 1070 406 L 1070 398" stroke-opacity="0.5" stroke-width="1.6"/>
+    <circle cx="1070" cy="520" r="54" stroke-opacity="0.92" stroke-width="2.8"/>
+    <path d="M 1070 520 L 1102 498" stroke-opacity="0.94" stroke-width="2.6"/>
+    <circle cx="1070" cy="520" r="4" stroke-opacity="0.94" stroke-width="2"/>
+    <path d="M 1070 474 L 1070 482" stroke-opacity="0.5" stroke-width="1.6"/>
+    <path d="M 1116 520 L 1108 520" stroke-opacity="0.5" stroke-width="1.6"/>
+    <path d="M 1070 566 L 1070 558" stroke-opacity="0.5" stroke-width="1.6"/>
+    <rect x="1008" y="620" width="124" height="88" rx="10" stroke-opacity="0.94" stroke-width="2.8"/>
+    <path d="M 1024 620 L 1024 608" stroke-opacity="0.5" stroke-width="1.6"/>
+    <path d="M 1044 620 L 1044 608" stroke-opacity="0.5" stroke-width="1.6"/>
+    <path d="M 1064 620 L 1064 608" stroke-opacity="0.5" stroke-width="1.6"/>
+    <path d="M 1084 620 L 1084 608" stroke-opacity="0.5" stroke-width="1.6"/>
+    <path d="M 1104 620 L 1104 608" stroke-opacity="0.5" stroke-width="1.6"/>
+    <path d="M 1024 708 L 1024 720" stroke-opacity="0.5" stroke-width="1.6"/>
+    <path d="M 1044 708 L 1044 720" stroke-opacity="0.5" stroke-width="1.6"/>
+    <path d="M 1064 708 L 1064 720" stroke-opacity="0.5" stroke-width="1.6"/>
+    <path d="M 1084 708 L 1084 720" stroke-opacity="0.5" stroke-width="1.6"/>
+    <path d="M 1104 708 L 1104 720" stroke-opacity="0.5" stroke-width="1.6"/>
+    <circle cx="500" cy="380" r="7" stroke-opacity="0.86" stroke-width="1.8"/>
+    <circle cx="780" cy="400" r="7" stroke-opacity="0.86" stroke-width="1.8"/>
+    <circle cx="560" cy="700" r="7" stroke-opacity="0.86" stroke-width="1.8"/>
+    <path d="M 500 380 C 860 360, 980 420, 1008 650" stroke-opacity="0.42" stroke-width="1.8"/>
+    <path d="M 780 400 C 900 430, 980 500, 1008 664" stroke-opacity="0.42" stroke-width="1.8"/>
+    <path d="M 560 700 C 780 740, 940 720, 1008 690" stroke-opacity="0.42" stroke-width="1.8"/>
+  </g>
+</svg>
