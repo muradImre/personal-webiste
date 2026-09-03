@@ -18,6 +18,9 @@
   --pad-top: max(1.25rem, env(safe-area-inset-top, 0px));
   --pad-bottom: max(2.5rem, env(safe-area-inset-bottom, 0px));
   --pad-bottom-md: max(3rem, env(safe-area-inset-bottom, 0px));
+  /* Curtain travel — frozen in px on cover start; lvh fallback before that. */
+  --curtain-vh: 100lvh;
+  --curtain-arc: 32vw;
 }
 
 @theme inline {
@@ -135,22 +138,22 @@ button:focus-visible {
 
 .page-curtain {
   position: fixed;
-  /* Oversized oval so iOS URL-bar / svh changes can’t open a gap mid-wipe. */
-  top: -40vw;
+  /* Oversized oval. Prefer lvh (stable) over dvh so collapsing a tall page
+     (Home → Research) can’t resize the wipe mid-animation on mobile. */
+  top: calc(-1 * var(--curtain-arc));
   left: 50%;
   z-index: 80;
   display: flex;
   width: 180vw;
-  height: calc(100dvh + 80vw);
+  height: calc(var(--curtain-vh) + (2 * var(--curtain-arc)));
   align-items: flex-end;
   justify-content: center;
   margin-left: -90vw;
-  border-radius: 50% / 32vw;
+  border-radius: 50% / var(--curtain-arc);
   background: #1c1d20;
   color: #bdbebf;
   pointer-events: none;
-  /* Viewport units — not % of self height (that feedback-loops when dvh changes). */
-  transform: translate3d(0, calc(100dvh + 48vw), 0);
+  transform: translate3d(0, calc(var(--curtain-vh) + var(--curtain-arc)), 0);
   backface-visibility: hidden;
 }
 
@@ -161,7 +164,9 @@ button:focus-visible {
   max-width: 100dvw;
   transform: translateX(-50%);
   margin-left: 0;
-  bottom: calc(40vw + 28dvh);
+  bottom: calc(var(--curtain-arc) + 28%);
+  padding-left: var(--pad-left);
+  padding-right: var(--pad-right);
 }
 
 .page-curtain-copy p {
@@ -180,7 +185,7 @@ button:focus-visible {
 }
 
 .page-curtain-reveal {
-  transform: translate3d(0, calc(-100dvh - 48vw), 0);
+  transform: translate3d(0, calc(-1 * (var(--curtain-vh) + var(--curtain-arc))), 0);
   transition: transform 0.58s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
@@ -194,6 +199,33 @@ button:focus-visible {
 
 .page-curtain-idle .page-curtain-copy p {
   opacity: 0;
+  transition: none;
+}
+
+/* Full-bleed ink under the oval so page paper can’t flash through if the
+   curve or viewport hitch briefly during cover → reveal. */
+.page-curtain-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 79;
+  background: #1c1d20;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.page-curtain-scrim-cover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.page-curtain-scrim-reveal {
+  opacity: 0;
+  visibility: visible;
+  transition: opacity 0.2s linear 0.22s;
+}
+
+.page-curtain-scrim-idle {
   transition: none;
 }
 

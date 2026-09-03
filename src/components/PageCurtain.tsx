@@ -9,6 +9,7 @@ type Phase = "idle" | "cover" | "reveal";
 
 const COVER_MS = 480;
 const REVEAL_MS = 700;
+const SETTLE_MS = 100;
 const ABORT_MS = 10000;
 
 function prefersReducedMotion() {
@@ -34,6 +35,17 @@ function introLabel(href: string) {
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
+/** Lock curtain travel to the viewport at cover start so page-height collapse can’t hitch the wipe. */
+function freezeCurtainViewport() {
+  const root = document.documentElement;
+  const h = window.innerHeight;
+  root.style.setProperty("--curtain-vh", `${h}px`);
+}
+
+function clearCurtainViewport() {
+  document.documentElement.style.removeProperty("--curtain-vh");
+}
+
 export function PageCurtain() {
   const router = useRouter();
   const pathname = usePathname();
@@ -41,6 +53,7 @@ export function PageCurtain() {
   const destHref = useRef<string | null>(null);
   const phaseRef = useRef<Phase>("idle");
   const pushTimer = useRef(0);
+  const settleTimer = useRef(0);
   const [phase, setPhase] = useState<Phase>("idle");
   const [label, setLabel] = useState("");
   const [navStarted, setNavStarted] = useState(false);
@@ -52,6 +65,7 @@ export function PageCurtain() {
   useEffect(() => {
     if (phase === "idle") {
       delete document.documentElement.dataset.curtain;
+      clearCurtainViewport();
     } else {
       document.documentElement.dataset.curtain = phase;
     }
@@ -85,10 +99,10 @@ export function PageCurtain() {
       setPaintedPath(null);
       setNavStarted(false);
       setLabel(introLabel(href) || (anchor.textContent ?? "").trim().split("\n")[0]);
-      // Reset scroll-tint so the paper tone doesn’t flash dark→light under the reveal.
       document.documentElement.style.setProperty("--end", "0");
       document.documentElement.style.setProperty("--end-bar", "0");
       document.documentElement.style.setProperty("--hero", "0");
+      freezeCurtainViewport();
       setPhase("cover");
 
       window.clearTimeout(pushTimer.current);
@@ -107,6 +121,7 @@ export function PageCurtain() {
     return () => {
       document.removeEventListener("click", onClick, true);
       window.clearTimeout(pushTimer.current);
+      window.clearTimeout(settleTimer.current);
     };
   }, [pathname, router, startTransition]);
 
@@ -130,13 +145,12 @@ export function PageCurtain() {
 
   useEffect(() => {
     if (phase !== "cover" || !arrived) return;
-    // Let scroll-to-top + URL-bar settle before lifting, or mobile shows a one-frame gap.
-    const id = window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(() => {
-        if (phaseRef.current === "cover") setPhase("reveal");
-      });
-    });
-    return () => window.cancelAnimationFrame(id);
+    // Extra settle: Home → short pages collapse layout under the cover; wait before lifting.
+    window.clearTimeout(settleTimer.current);
+    settleTimer.current = window.setTimeout(() => {
+      if (phaseRef.current === "cover") setPhase("reveal");
+    }, SETTLE_MS);
+    return () => window.clearTimeout(settleTimer.current);
   }, [phase, arrived]);
 
   useEffect(() => {
@@ -166,6 +180,7 @@ export function PageCurtain() {
     function onPop() {
       if (phaseRef.current === "idle") return;
       window.clearTimeout(pushTimer.current);
+      window.clearTimeout(settleTimer.current);
       destHref.current = null;
       setNavStarted(false);
       setPaintedPath(null);
@@ -177,10 +192,13 @@ export function PageCurtain() {
   }, []);
 
   return (
-    <div className={`page-curtain page-curtain-${phase}`} data-phase={phase} aria-hidden="true">
-      <div className="page-curtain-copy px-5 md:px-12">
-        <p className="display max-w-[12ch] text-[clamp(4.2rem,14vw,11rem)]">{label}</p>
+    <>
+      <div className={`page-curtain-scrim page-curtain-scrim-${phase}`} aria-hidden="true" />
+      <div className={`page-curtain page-curtain-${phase}`} data-phase={phase} aria-hidden="true">
+        <div className="page-curtain-copy">
+          <p className="display max-w-[12ch] text-[clamp(4.2rem,14vw,11rem)]">{label}</p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
