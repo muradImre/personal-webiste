@@ -4,7 +4,6 @@ import { RelatedList, Sections } from "@/components/ArticleBody";
 import { Article, ArticleHead, BackLink } from "@/components/PageIntro";
 import { getIdea, ideas } from "@/content/ideas";
 import { pageMetadata } from "@/lib/pageMetadata";
-import { stageLabel } from "@/lib/format";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -31,7 +30,7 @@ export default async function NextDetailPage({ params }: Props) {
   return (
     <Article>
       <BackLink href="/next" label="Next" />
-      <ArticleHead kicker={`${stageLabel(item.stage)} · ${item.updated}`} title={item.title}>
+      <ArticleHead kicker={item.status} title={item.title}>
         <p className="text-[19px] leading-8 text-ink-soft">{item.summary}</p>
       </ArticleHead>
       <div className="mx-auto max-w-2xl">

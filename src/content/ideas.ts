@@ -1,11 +1,11 @@
-import type { IdeaStage, Related, Section, Visibility } from "./types";
+import type { Related, Section, Visibility } from "./types";
 
 export type Idea = {
   slug: string;
   title: string;
-  stage: IdeaStage;
+  /** Current state, shown in the corner (list + detail). */
+  status: string;
   summary: string;
-  updated: string;
   sections: Section[];
   related: Related[];
   visibility: Visibility;
@@ -15,55 +15,52 @@ export const ideas: Idea[] = [
   {
     slug: "document-coder",
     title: "Document coder",
-    stage: "budding",
-    updated: "2026",
-    summary: "Finish the document tool so someone else can actually use it — writeup, stack, a link, a version that isn't just mine.",
+    status: "In use · private",
+    summary:
+      "I already run this. What's missing is something you could hand a teammate — not another private tool that only works on my machine.",
     sections: [
       {
         heading: "Next",
         paragraphs: [
-          "I already run this. What's missing is the thing you'd hand a teammate: how it's built, where the code lives, and a first-run that doesn't assume I wrote it.",
+          "Writeup, stack, a link, and a first-run that doesn't assume I wrote it.",
         ],
       },
     ],
-    related: [{ href: "/projects/document-coder", label: "Project page" }],
+    related: [{ href: "/projects/document-coder", label: "Project writeup" }],
     visibility: "listed",
   },
   {
     slug: "shippable-muqaddim",
     title: "Shippable Muqaddim",
-    stage: "budding",
-    updated: "2026",
+    status: "Local · works for me",
     summary:
-      "Muqaddim works for my day. Next is making it usable for people who aren't me — without turning it into a cloud tracker.",
+      "Forty-eight half-hour slots, six lanes, menu bar, local only. That's the product I wanted — for my day, on my machine.",
     sections: [
       {
         heading: "Next",
         paragraphs: [
-          "Right now it's 48 half-hour slots, six lanes, menu bar, local only. That's the product I wanted.",
-          "Shippable means the same idea, optimized for someone who didn't write it: install, defaults, the empty first day. Still on the machine. Still no account.",
+          "Make the same idea usable for someone who didn't write it: install, defaults, the empty first day. Still on the machine. Still no account. Not a cloud tracker.",
         ],
       },
     ],
-    related: [{ href: "/projects/muqaddim", label: "Muqaddim" }],
+    related: [{ href: "/projects/muqaddim", label: "Muqaddim project" }],
     visibility: "listed",
   },
   {
     slug: "reminisce-launch",
     title: "Reminisce public launch",
-    stage: "budding",
-    updated: "2026",
+    status: "Live · 20 families",
     summary:
-      "The product exists. Twenty families have used it. Next is a public launch, not another private pilot.",
+      "Reminisce turns family voice recordings into personalized animated films. The product is live; twenty families have already used it.",
     sections: [
       {
         heading: "Next",
         paragraphs: [
-          "Reminisce turns family voice recordings into personalized animated films. It's live. The work now is putting it in front of people who weren't in the first twenty.",
+          "A public launch — put it in front of people who weren't in the first twenty. Not another private pilot.",
         ],
       },
     ],
-    related: [{ href: "/experience/reminisce", label: "Professional experience" }],
+    related: [{ href: "/experience/reminisce", label: "Reminisce experience" }],
     visibility: "listed",
   },
 ];

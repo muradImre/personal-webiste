@@ -11,15 +11,3 @@ export function kindLabel(kind: string) {
   }
 }
 
-export function stageLabel(stage: string) {
-  switch (stage) {
-    case "seedling":
-      return "Seedling";
-    case "budding":
-      return "Budding";
-    case "evergreen":
-      return "Evergreen";
-    default:
-      return stage;
-  }
-}
