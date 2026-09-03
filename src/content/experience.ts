@@ -26,31 +26,31 @@ export const experiences: Experience[] = [
     summary:
       "Families tell a story. Reminisce turns it into an animated film they can watch together. Piloted with 20 families.",
     highlights: [
-      "A voice-to-film product people can open — not a demo reel.",
-      "Thirty-plus conversations about how families would actually use it, then a pilot with twenty of them.",
-      "I built the pipeline in Node.js and TypeScript: speech, scenes, then video.",
+      "Families record a story and get an animated film they can watch and keep.",
+      "Thirty-plus conversations with families, then a twenty-family pilot.",
+      "Pipeline built in Node.js and TypeScript: speech, scenes, video.",
     ],
     sections: [
       {
-        heading: "Before the pipeline was mature",
+        heading: "The problem",
         paragraphs: [
-          "Someone should be able to sit down, tell a family story naturally, and end up with something they can watch and keep. The hard part is everything between those two moments. People jump around in time, forget names, add context late, and care about details a model does not know are important. The product had to turn that into a coherent film without sanding away what made it personal.",
-          "I talked to more than thirty prospective users before the pipeline was mature: what they would want to preserve, who they would make it for, how comfortable they were recording themselves, and what would make the result feel worth keeping. That research changed the product several times.",
-          "Then I piloted it with twenty families. That is where the useful feedback came from: confusing onboarding, stories that generated badly, scenes that matched the transcript but felt emotionally wrong, and places the system needed more context than I expected.",
+          "Someone should be able to sit down, tell a family story the way they actually talk, and end up with a film they can watch and keep.",
+          "The hard part is everything in between. People jump around in time, forget names, add context late, and care about details a model does not know are important. The product has to turn that into a coherent film without sanding away what made it personal.",
         ],
       },
       {
-        heading: "How the system is built",
+        heading: "How it's built",
         paragraphs: [
-          "I built the pipeline in Node.js and TypeScript. Raw speech becomes a transcript. From there the system has to understand people, places, events, relationships, chronology, and emotional beats, then turn that into a scene plan and structured inputs for visuals and video.",
-          "The hard part is coherence across the whole chain. A mistake early becomes a completely believable but wrong scene several steps later. Each stage has a clear output rather than one giant prompt deciding everything. I added retries and checks around generation because model calls fail in ways normal software does not: an API can succeed while the result is still unusable.",
+          "Raw speech becomes a transcript. From there the system recovers people, places, events, relationships, chronology, and emotional beats, then turns that into a scene plan and structured inputs for visuals and video.",
+          "Each stage has a clear output. Retries and checks sit around generation.",
         ],
       },
       {
         heading: "What changed once people used it",
         paragraphs: [
-          "Technical correctness and product quality are different things. A scene can contain the right people and setting and still feel wrong to the family watching it. A generated film can complete successfully and still miss the point of the story.",
-          "That pushed the work toward evaluation, user intent, and where human judgment belongs inside the workflow — without treating the pipeline as a black box.",
+          "The thirty-plus conversations happened before the pipeline was mature. They changed what to preserve, who the film was for, and how comfortable people were recording themselves.",
+          "The twenty-family pilot is where the real failures showed up: confusing onboarding, stories that generated badly, scenes that matched the transcript but felt off, and places the system needed more context than expected.",
+          "That pushed the work toward evaluation, user intent, and where a person still has to decide.",
         ],
       },
     ],

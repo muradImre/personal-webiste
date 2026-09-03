@@ -23,7 +23,7 @@ export default function ProjectsPage() {
   return (
     <div>
       <PageIntro title="Projects —">
-        <p>The systems and tools behind that sentence. Labels are Systems or Personal.</p>
+        <p>Systems work and tools I actually use.</p>
       </PageIntro>
       <div className="pt-10 pb-16">
         <InfiniteGallery items={items} />

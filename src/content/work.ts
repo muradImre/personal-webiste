@@ -90,7 +90,7 @@ export const work: WorkItem[] = [
         heading: "Why I am building it",
         paragraphs: [
           "A lot of people who spend their day in documents know exactly what they want to accomplish but should not need to understand APIs, backend systems, or agent orchestration to make it happen.",
-          "I wanted to see how much of that technical layer could disappear behind something they already know how to use: writing.",
+          "I wanted to see how much of that technical layer could disappear behind something they already know how to use: writing. Think documents for agents the way high-level languages were for assembly.",
         ],
       },
       {
