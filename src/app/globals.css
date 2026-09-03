@@ -11,6 +11,13 @@
   --end: 0;
   --end-bar: 0;
   --hero: 0;
+  --pad-left: max(1.25rem, env(safe-area-inset-left, 0px));
+  --pad-right: max(1.25rem, env(safe-area-inset-right, 0px));
+  --pad-left-md: max(3rem, env(safe-area-inset-left, 0px));
+  --pad-right-md: max(3rem, env(safe-area-inset-right, 0px));
+  --pad-top: max(1.25rem, env(safe-area-inset-top, 0px));
+  --pad-bottom: max(2.5rem, env(safe-area-inset-bottom, 0px));
+  --pad-bottom-md: max(3rem, env(safe-area-inset-bottom, 0px));
 }
 
 @theme inline {
@@ -128,28 +135,33 @@ button:focus-visible {
 
 .page-curtain {
   position: fixed;
-  top: -26vw;
+  /* Oversized oval so iOS URL-bar / svh changes can’t open a gap mid-wipe. */
+  top: -40vw;
   left: 50%;
   z-index: 80;
   display: flex;
-  width: 170vw;
-  height: calc(100svh + 52vw);
+  width: 180vw;
+  height: calc(100dvh + 80vw);
   align-items: flex-end;
   justify-content: center;
-  margin-left: -85vw;
-  border-radius: 50% / 26vw;
+  margin-left: -90vw;
+  border-radius: 50% / 32vw;
   background: #1c1d20;
   color: #bdbebf;
   pointer-events: none;
-  transform: translate3d(0, 100%, 0);
+  /* Viewport units — not % of self height (that feedback-loops when dvh changes). */
+  transform: translate3d(0, calc(100dvh + 48vw), 0);
+  backface-visibility: hidden;
 }
 
 .page-curtain-copy {
   position: absolute;
   left: 50%;
-  width: 100vw;
-  margin-left: -50vw;
-  bottom: calc(26vw + 28svh);
+  width: min(100%, 100dvw);
+  max-width: 100dvw;
+  transform: translateX(-50%);
+  margin-left: 0;
+  bottom: calc(40vw + 28dvh);
 }
 
 .page-curtain-copy p {
@@ -168,7 +180,7 @@ button:focus-visible {
 }
 
 .page-curtain-reveal {
-  transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, calc(-100dvh - 48vw), 0);
   transition: transform 0.58s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
@@ -183,6 +195,16 @@ button:focus-visible {
 .page-curtain-idle .page-curtain-copy p {
   opacity: 0;
   transition: none;
+}
+
+/* Kill rubber-band / address-bar reflow peeking around the curtain on phones. */
+html[data-curtain] {
+  overflow: hidden;
+}
+
+html[data-curtain] body {
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 /* Soft route fade removed — the page curtain owns transitions.

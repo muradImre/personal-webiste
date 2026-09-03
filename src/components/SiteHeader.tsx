@@ -111,7 +111,7 @@ export function SiteHeader() {
     <header
       className={`site-header print:hidden${pathname === "/" ? " site-header-home" : ""}${pastHero ? " is-past-hero" : ""}`}
     >
-      <div className="flex items-center justify-between gap-6 px-5 py-5 md:px-12">
+      <div className="flex items-center justify-between gap-6 pt-[var(--pad-top)] pb-5 pl-[var(--pad-left)] pr-[var(--pad-right)] md:pl-[var(--pad-left-md)] md:pr-[var(--pad-right-md)]">
         <Link href="/" className="text-[16px] no-underline">
           © {site.name}
         </Link>
@@ -137,7 +137,7 @@ export function SiteHeader() {
           aria-modal="true"
           aria-label="Menu"
         >
-          <div className="flex items-center justify-between px-5 py-5 md:px-12">
+          <div className="flex items-center justify-between pt-[var(--pad-top)] pb-5 pl-[var(--pad-left)] pr-[var(--pad-right)] md:pl-[var(--pad-left-md)] md:pr-[var(--pad-right-md)]">
             <span className="text-[16px]">© {site.name}</span>
             <button
               ref={closeBtnRef}
@@ -148,7 +148,7 @@ export function SiteHeader() {
               Close
             </button>
           </div>
-          <nav className="flex flex-1 flex-col justify-center px-5 md:px-12">
+          <nav className="flex flex-1 flex-col justify-center pb-[var(--pad-bottom)] pl-[var(--pad-left)] pr-[var(--pad-right)] md:pl-[var(--pad-left-md)] md:pr-[var(--pad-right-md)] md:pb-[var(--pad-bottom-md)]">
             {menu.map((item) => (
               <Link
                 key={item.href}

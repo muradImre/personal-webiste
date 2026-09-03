@@ -8,7 +8,7 @@ import { scrollToTopInstant } from "@/lib/scrollY";
 type Phase = "idle" | "cover" | "reveal";
 
 const COVER_MS = 480;
-const REVEAL_MS = 620;
+const REVEAL_MS = 700;
 const ABORT_MS = 10000;
 
 function prefersReducedMotion() {
@@ -130,7 +130,13 @@ export function PageCurtain() {
 
   useEffect(() => {
     if (phase !== "cover" || !arrived) return;
-    setPhase("reveal");
+    // Let scroll-to-top + URL-bar settle before lifting, or mobile shows a one-frame gap.
+    const id = window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        if (phaseRef.current === "cover") setPhase("reveal");
+      });
+    });
+    return () => window.cancelAnimationFrame(id);
   }, [phase, arrived]);
 
   useEffect(() => {

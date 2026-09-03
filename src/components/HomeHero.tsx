@@ -45,10 +45,10 @@ export function HomeHero() {
   }, []);
 
   return (
-    <section className="relative h-svh overflow-hidden bg-[#1c1d20] text-paper">
+    <section className="relative h-dvh overflow-hidden bg-[#1c1d20] text-paper">
       <div
         ref={photoRef}
-        className="hero-photo pointer-events-none absolute inset-0 will-change-transform md:inset-x-0 md:-top-[12vh] md:bottom-auto md:h-[calc(100%+24vh)]"
+        className="hero-photo pointer-events-none absolute inset-0 will-change-transform md:inset-x-0 md:-top-[12dvh] md:bottom-auto md:h-[calc(100%+24dvh)]"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -59,7 +59,7 @@ export function HomeHero() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(20,21,22,0.52)_0%,rgba(20,21,22,0.08)_45%,rgba(20,21,22,0.34)_100%)]" />
       </div>
-      <div className="relative z-10 flex h-full min-w-0 flex-col justify-end px-5 pb-10 md:px-12 md:pb-12">
+      <div className="relative z-10 flex h-full min-w-0 flex-col justify-end pl-[var(--pad-left)] pr-[var(--pad-right)] pb-[var(--pad-bottom)] md:pl-[var(--pad-left-md)] md:pr-[var(--pad-right-md)] md:pb-[var(--pad-bottom-md)]">
         <p className="max-w-full min-w-0 text-[15px] leading-snug sm:text-[16px]">
           <span className="block sm:inline">Software engineer · Rice University</span>
           <span className="hidden sm:inline"> · </span>

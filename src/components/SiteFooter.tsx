@@ -48,7 +48,7 @@ export function SiteFooter() {
 
   return (
     <footer id="contact" className="site-end print:hidden">
-      <div className="flex min-h-svh flex-col justify-between px-5 pt-28 pb-10 md:px-12">
+      <div className="flex min-h-dvh flex-col justify-between pl-[var(--pad-left)] pr-[var(--pad-right)] pt-28 pb-[var(--pad-bottom)] md:pl-[var(--pad-left-md)] md:pr-[var(--pad-right-md)] md:pb-[var(--pad-bottom-md)]">
         <div className="flex flex-col items-center gap-14 md:flex-row md:items-end md:justify-between md:gap-10">
           <div className="w-full min-w-0 md:flex-1">
             <p className="text-[16px]">Contact</p>
